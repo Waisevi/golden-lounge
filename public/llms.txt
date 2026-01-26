@@ -1,0 +1,28 @@
+# GD Lounge & Bar - Miami
+
+Premium Lounge & Bar located in Downtown Miami.
+
+## Core Features
+- **Hero Video**: Immersive video background showing the lounge atmosphere.
+- **Menu**: Extensive menu including Small Plates, Sushi & Sashimi, Maki Rolls, Buns & Dim Sum, and Main Dishes.
+- **Events**: Poster-style carousel of upcoming themed nights.
+- **News**: Blog-style articles about Miami nightlife and mixology.
+- **Lead Capture**: VIP list and reservation forms integrated throughout.
+
+## Technical Stack
+- Next.js 16 (Turbopack)
+- React 19
+- Tailwind CSS 4
+- Lucide React Icons
+- Embla Carousel for horizontal scrolling
+
+## Project Structure
+- `/app`: Main routes and page logic.
+- `/components`: UI sections and reusable components like `LeadForm`.
+- `/lib`: Data files (`menu-data.ts`, `news-data.ts`) and utilities.
+- `/public`: Static assets (images, videos).
+
+## Contact
+- Address: 300 S Biscayne Blvd Suite C-202B, Miami, FL 33131
+- Phone: +1 (305) 249-1222
+- Email: reservations@example.com

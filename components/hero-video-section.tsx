@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
 import { getAssetUrl } from "@/lib/assets";
 import { ReserveModal } from "@/components/reserve-modal";
 
@@ -66,22 +65,11 @@ export function HeroVideoSection() {
               asChild
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto rounded-xl border-white/30 bg-transparent px-10 py-7 text-lg font-bold text-white backdrop-blur-md hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] hover:scale-105 transition-all"
+              className="w-full sm:w-auto rounded-xl border-white/30 bg-transparent px-10 py-7 text-lg font-bold text-white backdrop-blur-md hover:bg-transparent hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] hover:scale-105 transition-all"
             >
               <a href="#gallery">View Gallery</a>
             </Button>
           </div>
-        </div>
-
-        {/* Scroll */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <a
-            href="#about"
-            className="flex flex-col items-center gap-1 text-white/60 hover:text-white transition"
-          >
-            <span className="text-[10px] tracking-widest uppercase">Explore</span>
-            <ChevronDown className="h-4 w-4" />
-          </a>
         </div>
       </div>
 

@@ -21,8 +21,7 @@ export default function Home() {
       <KaraokeSection />
       <GallerySection />
       <AboutSection />
-      <FoodSection />
-      <CocktailsSection />
+
       <EventsSection />
 
       <LocationSection />

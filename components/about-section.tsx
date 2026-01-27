@@ -1,5 +1,8 @@
+"use client";
+
 import { Check } from "lucide-react";
-import { getAssetUrl } from "@/lib/assets";
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 const highlights = [
   {
@@ -17,21 +20,43 @@ const highlights = [
 ];
 
 export function AboutSection() {
+  const [videoUrl, setVideoUrl] = useState<string>("");
+
+  useEffect(() => {
+    async function getVideoUrl() {
+      try {
+        const { data } = supabase.storage
+          .from("assets")
+          .getPublicUrl("video/about.mp4");
+        
+        if (data?.publicUrl) {
+          setVideoUrl(data.publicUrl);
+        }
+      } catch (error) {
+        console.error("Error getting video URL from storage:", error);
+      }
+    }
+
+    getVideoUrl();
+  }, []);
+
   return (
     <section id="about" className="py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20 items-center">
           {/* Video Column */}
           <div className="relative aspect-[9/16] lg:aspect-[4/5] overflow-hidden rounded-[2rem] border border-border/40 shadow-2xl">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="h-full w-full object-cover"
-            >
-              <source src={getAssetUrl("/video/about.mp4")} type="video/mp4" />
-            </video>
+            {videoUrl && (
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-cover"
+              >
+                <source src={videoUrl} type="video/mp4" />
+              </video>
+            )}
             {/* Subtle Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
           </div>

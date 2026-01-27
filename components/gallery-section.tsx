@@ -37,10 +37,7 @@ export function GallerySection() {
   }, []);
 
   return (
-    <section
-      id="gallery"
-      className="py-24 lg:py-32 bg-background"
-    >
+    <section id="gallery" className="bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -60,7 +57,7 @@ export function GallerySection() {
           {images.map((img, index) => (
             <Card
               key={img.id}
-              className="group relative overflow-hidden bg-card border-border/40 cursor-zoom-in"
+              className="group relative overflow-hidden bg-card border-border/40 "
               onClick={() => setSelectedImage(getAssetUrl(img.image_url))}
             >
               <div className="relative aspect-square">

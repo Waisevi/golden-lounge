@@ -12,6 +12,7 @@ type GalleryItem = {
   id: string;
   image_url: string;
   alt_text: string;
+  order: number;
 };
 
 export function GallerySection() {
@@ -54,15 +55,26 @@ export function GallerySection() {
 
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {images.map((img, index) => (
+          {images.map((img, index) => {
+            // Use local files from public/images/gallery for positions 2, 4, 5, 7
+            const order = img.order || (index + 1);
+            const useLocalFile = [2, 4, 5, 7].includes(order);
+            const imageSrc = useLocalFile 
+              ? `/images/gallery/${order}.webp`
+              : getAssetUrl(img.image_url);
+            const modalSrc = useLocalFile
+              ? `/images/gallery/${order}.webp`
+              : getAssetUrl(img.image_url);
+            
+            return (
             <Card
               key={img.id}
               className="group relative overflow-hidden bg-card border-border/40 "
-              onClick={() => setSelectedImage(getAssetUrl(img.image_url))}
+              onClick={() => setSelectedImage(modalSrc)}
             >
               <div className="relative aspect-square">
                 <Image
-                  src={getAssetUrl(img.image_url)}
+                  src={imageSrc}
                   alt={img.alt_text || `Lounge gallery ${index + 1}`}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -75,7 +87,8 @@ export function GallerySection() {
                 </div>
               </div>
             </Card>
-          ))}
+            );
+          })}
         </div>
       </div>
 

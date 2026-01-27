@@ -8,12 +8,15 @@ export function KaraokeSection() {
           {/* Content Column */}
           <div>
             <h2 className="mb-6 text-4xl lg:text-5xl font-bold text-foreground leading-tight font-serif text-center lg:text-left">
-              Private, luxurious & seriously fun
+              Private Karaoke Rooms
             </h2>
 
             <div className="text-lg text-muted-foreground leading-relaxed max-w-2xl text-balance text-center lg:text-left">
               <p>
-                GD Lounge takes karaoke to another level. Our private rooms give you space to sing, laugh, and let loose without a crowd staring you down. Professional sound, sharp lighting, and crafted cocktails set the tone while your group takes over the night. Whether it is a birthday, a team night, or just friends chasing a good story, this is where Miami does karaoke right.
+                GD Lounge takes karaoke to another level. Our private rooms give
+                you space to sing, laugh, and let loose without a crowd staring
+                you down. Professional sound, sharp lighting, and crafted
+                cocktails set the tone while your group takes over the night.
               </p>
             </div>
           </div>

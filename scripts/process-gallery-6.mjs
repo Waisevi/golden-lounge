@@ -16,7 +16,7 @@ const __dirname = path.dirname(__filename);
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://czhonxtlovawwjfbxgbx.supabase.co';
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6aG9ueHRsb3Zhd3dqZmJ4Z2J4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2OTI0NzEyMiwiZXhwIjoyMDg0ODIzMTIyfQ.9oqX1rrR632z1LOPFq0aj45kZVDymEBbd9o6aM04fC0';
 const bucketName = 'assets';
-const maxSizeBytes = 1 * 1024 * 1024; // 1 MB
+const maxSizeBytes = 2 * 1024 * 1024; // 2 MB
 
 if (!supabaseUrl || !supabaseServiceKey) {
     console.error('❌ Error: NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set');
@@ -143,7 +143,7 @@ async function updateGallerySixthImage(imagePath) {
 async function main() {
     try {
         const publicDir = path.join(process.cwd(), 'public');
-        const inputFile = path.join(publicDir, 'images', 'gallery', 'IMG_0262.JPG');
+        const inputFile = path.join(publicDir, 'IMG_1565.JPG');
         const outputFile = path.join(publicDir, 'gallery-6.webp');
         
         // Check if input file exists
@@ -154,7 +154,7 @@ async function main() {
         
         console.log('🚀 Starting image processing...\n');
         
-        // Step 1: Compress and convert to WebP (max 1 MB)
+        // Step 1: Compress and convert to WebP (max 2 MB)
         await compressAndConvertToWebp(inputFile, outputFile, maxSizeBytes);
         
         // Step 2: Upload to Supabase Storage

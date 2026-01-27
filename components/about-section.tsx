@@ -27,7 +27,7 @@ export function AboutSection() {
       try {
         const { data } = supabase.storage
           .from("assets")
-          .getPublicUrl("video/about.mp4");
+          .getPublicUrl("video/gd.mp4");
         
         if (data?.publicUrl) {
           setVideoUrl(data.publicUrl);

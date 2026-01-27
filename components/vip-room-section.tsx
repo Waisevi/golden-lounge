@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function VipRoomSection() {
   return (
-    <section id="vip-room" className="bg-background">
+    <section id="vip-room" className="bg-background pt-24 lg:pt-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-20 items-center">
           {/* Image Column */}

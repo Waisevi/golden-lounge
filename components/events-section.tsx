@@ -69,21 +69,25 @@ export function EventsSection() {
 
         {/* Carousel Container */}
         <div className="relative overflow-visible">
-          {/* Navigation Buttons */}
-          <button
-            onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 z-10 w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-primary/40 bg-background/80 backdrop-blur-sm flex items-center justify-center text-white hover:bg-primary/10 hover:border-primary transition-all duration-300 shadow-lg"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-6 h-6 lg:w-7 lg:h-7" />
-          </button>
-          <button
-            onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 z-10 w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-primary/40 bg-background/80 backdrop-blur-sm flex items-center justify-center text-white hover:bg-primary/10 hover:border-primary transition-all duration-300 shadow-lg"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-6 h-6 lg:w-7 lg:h-7" />
-          </button>
+          {/* Navigation Buttons — only if 4+ items */}
+          {events.length >= 4 && (
+            <>
+              <button
+                onClick={scrollPrev}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 z-10 w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-primary/40 bg-background/80 backdrop-blur-sm flex items-center justify-center text-white hover:bg-primary/10 hover:border-primary transition-all duration-300 shadow-lg"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-6 h-6 lg:w-7 lg:h-7" />
+              </button>
+              <button
+                onClick={scrollNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 z-10 w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-primary/40 bg-background/80 backdrop-blur-sm flex items-center justify-center text-white hover:bg-primary/10 hover:border-primary transition-all duration-300 shadow-lg"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-6 h-6 lg:w-7 lg:h-7" />
+              </button>
+            </>
+          )}
 
           <div className="overflow-hidden">
             <Swiper

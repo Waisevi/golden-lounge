@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { ReserveModal } from "@/components/reserve-modal";
 
 const RESERVE_URL = "https://www.sevenrooms.com/reservations/gdlounge";
 
@@ -18,6 +19,7 @@ const navLinks = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVipModalOpen, setIsVipModalOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -49,8 +51,8 @@ export function Header() {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
             <Button
               asChild
               className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6"
@@ -58,6 +60,13 @@ export function Header() {
               <a href={RESERVE_URL} target="_blank" rel="noopener noreferrer">
                 Reserve
               </a>
+            </Button>
+            <Button
+              variant="outline"
+              className="border-primary/50 text-primary hover:bg-primary/20 hover:border-primary hover:text-primary rounded-full px-5"
+              onClick={() => setIsVipModalOpen(true)}
+            >
+              Become a VIP
             </Button>
           </div>
 
@@ -97,9 +106,24 @@ export function Header() {
                 Reserve
               </a>
             </Button>
+            <Button
+              variant="outline"
+              className="border-primary/50 text-primary hover:bg-primary/20 hover:border-primary rounded-full"
+              onClick={() => {
+                setIsMenuOpen(false);
+                setIsVipModalOpen(true);
+              }}
+            >
+              Become a VIP
+            </Button>
           </nav>
         </div>
       )}
+
+      <ReserveModal
+        isOpen={isVipModalOpen}
+        onOpenChange={setIsVipModalOpen}
+      />
     </header>
   );
 }

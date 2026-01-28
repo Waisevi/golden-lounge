@@ -57,26 +57,27 @@ export function GallerySection() {
           {images.map((img, index) => {
             const imageSrc = getAssetUrl(img.image_url);
             return (
-            <Card
-              key={img.id}
-              className="group relative overflow-hidden bg-card border-border/40 "
-              onClick={() => setSelectedImage(imageSrc)}
-            >
-              <div className="relative aspect-square">
-                <Image
-                  src={imageSrc}
-                  alt={img.alt_text || `Lounge gallery ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Overlay with Icon */}
-                <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-primary/80 text-primary-foreground flex items-center justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <Maximize2 className="w-6 h-6" />
+              <Card
+                key={img.id}
+                className="group relative overflow-hidden bg-card border-border/40 "
+                onClick={() => setSelectedImage(imageSrc)}
+              >
+                <div className="relative aspect-square">
+                  <Image
+                    src={imageSrc}
+                    alt={img.alt_text || `Lounge gallery ${index + 1}`}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Overlay with Icon */}
+                  <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-primary/80 text-primary-foreground flex items-center justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <Maximize2 className="w-6 h-6" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
             );
           })}
         </div>
@@ -88,6 +89,6 @@ export function GallerySection() {
         src={selectedImage || ""}
         alt="Gallery Preview"
       />
-    </section>
+    </section >
   );
 }

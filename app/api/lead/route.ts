@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 
 type LeadPayload = {
-    formType: "vip" | "reserve" | "consultation";
+    formType: "vip" | "reserve" | "consultation" | "private_party";
     email?: string;
     phone?: string;
     name?: string;
@@ -134,6 +134,34 @@ export async function POST(request: Request) {
         if (dbError) {
             console.error("❌ Database error:", dbError.message);
             // Продолжаем, так как лог уже записан, но возвращаем успех, если это не критично
+        }
+
+        // 🔗 Webhook Integration
+        let webhookUrl = "";
+        if (body.formType === "vip") {
+            webhookUrl = "https://services.leadconnectorhq.com/hooks/YIKVmEJTogLupj8ffFeN/webhook-trigger/cfd6e425-6f75-48bb-a5af-b0f57f1f5448";
+        } else if (body.formType === "private_party") {
+            webhookUrl = "https://services.leadconnectorhq.com/hooks/YIKVmEJTogLupj8ffFeN/webhook-trigger/b9f44074-bb38-449c-a978-62785dba48fb";
+        }
+
+        if (webhookUrl) {
+            try {
+                // Fire and forget (optional: await if you want to ensure delivery before success)
+                // We await here to ensure it's sent, catching errors so we don't block the UI response
+                const webhookRes = await fetch(webhookUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(crmPayload),
+                });
+
+                if (!webhookRes.ok) {
+                    console.error(`Webhook failed for ${body.formType}: ${webhookRes.status} ${webhookRes.statusText}`);
+                } else {
+                    console.log(`Webhook sent for ${body.formType}`);
+                }
+            } catch (webhookError) {
+                console.error("Webhook error:", webhookError);
+            }
         }
 
         return NextResponse.json({ success: true });

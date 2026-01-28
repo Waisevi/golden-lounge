@@ -66,32 +66,33 @@ export function CocktailsSection() {
           {cocktails.map((cocktail, index) => {
             const shiftDown = [3, 4, 5, 7].includes(index); // photos 4, 5, 6, 8
             return (
-            <Card
-              key={cocktail.id}
-              className="group overflow-hidden border-border/50 bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
-            >
-              {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={getAssetUrl(cocktail.image)}
-                  alt={cocktail.name}
-                  fill
-                  className={`object-cover transition-transform duration-500 group-hover:scale-110 ${shiftDown ? "object-[center_30%]" : ""}`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-              </div>
+              <Card
+                key={cocktail.id}
+                className="group overflow-hidden border-border/50 bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
+              >
+                {/* Image */}
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <Image
+                    src={getAssetUrl(cocktail.image)}
+                    alt={cocktail.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                </div>
 
-              {/* Content */}
-              <CardContent className="p-5 transition-colors group-hover:bg-primary/5">
-                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {cocktail.name}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {cocktail.description}
-                </p>
-              </CardContent>
-            </Card>
-          );
+                {/* Content */}
+                <CardContent className="p-5 transition-colors group-hover:bg-primary/5">
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {cocktail.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {cocktail.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
           })}
         </div>
       </div>

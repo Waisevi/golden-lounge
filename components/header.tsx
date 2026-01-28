@@ -17,9 +17,12 @@ const navLinks = [
   { href: "/news", label: "News" },
 ];
 
+import { PrivatePartyModal } from "@/components/private-party-modal";
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVipModalOpen, setIsVipModalOpen] = useState(false);
+  const [isPrivatePartyModalOpen, setIsPrivatePartyModalOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -49,6 +52,14 @@ export function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/nav:w-full" />
               </Link>
             ))}
+            {/* Private Party Link */}
+            <button
+              onClick={() => setIsPrivatePartyModalOpen(true)}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 relative group/nav"
+            >
+              Private Party
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/nav:w-full" />
+            </button>
           </nav>
 
           {/* CTA Buttons */}
@@ -96,6 +107,16 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            <button
+              className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-2 text-left"
+              onClick={() => {
+                setIsMenuOpen(false);
+                setIsPrivatePartyModalOpen(true);
+              }}
+            >
+              Private Party
+            </button>
+
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
               <a
                 href={RESERVE_URL}
@@ -123,6 +144,11 @@ export function Header() {
       <ReserveModal
         isOpen={isVipModalOpen}
         onOpenChange={setIsVipModalOpen}
+      />
+
+      <PrivatePartyModal
+        isOpen={isPrivatePartyModalOpen}
+        onOpenChange={setIsPrivatePartyModalOpen}
       />
     </header>
   );

@@ -118,20 +118,27 @@ export async function POST(request: Request) {
         // 4. Insert into Supabase
         const supabase = createClient(supabaseUrl, supabaseServiceKey);
         
+        // Prepare data with empty russian object to satisfy schema requirements
+        const insertData = {
+            slug,
+            title_en: title,
+            content_en: content,
+            excerpt_en: excerpt || "",
+            tags: processedTags,
+            image: uploadedImageUrl || "",
+            published: typeof published === "boolean" ? published : true,
+            updated_at: new Date().toISOString(),
+            // Add empty russian object as required by schema
+            russian: {
+                title: "",
+                content: "",
+                excerpt: "",
+            },
+        };
+        
         const { data, error } = await supabase
             .from("news")
-            .insert([
-                {
-                    slug,
-                    title_en: title,
-                    content_en: content,
-                    excerpt_en: excerpt || "",
-                    tags: processedTags,
-                    image: uploadedImageUrl || "",
-                    published: typeof published === "boolean" ? published : true,
-                    updated_at: new Date().toISOString(),
-                },
-            ])
+            .insert([insertData])
             .select();
 
         if (error) {

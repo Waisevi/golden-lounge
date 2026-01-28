@@ -31,7 +31,7 @@ export function HeroVideoSection() {
         <div className="max-w-4xl space-y-10">
           {/* Location badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
-            <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
+            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-accent animate-pulse" />
             <span className="text-xs font-semibold tracking-[0.3em] uppercase text-white">
               Downtown Miami
             </span>

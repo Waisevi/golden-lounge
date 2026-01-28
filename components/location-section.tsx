@@ -98,6 +98,7 @@ export function LocationSection() {
             {/* Map */}
             <div className="w-full h-[200px] sm:h-[280px] rounded-xl overflow-hidden border border-border/50">
               <iframe
+                title="Google Maps Location of GD Lounge"
                 src="https://www.google.com/maps?q=300+S+Biscayne+Blvd+Suite+C-202B+Miami+FL+33131&output=embed"
                 width="100%"
                 height="100%"

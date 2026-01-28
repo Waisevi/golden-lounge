@@ -9,6 +9,7 @@ import { VipRoomSection } from "@/components/vip-room-section";
 import { KaraokeSection } from "@/components/karaoke-section";
 import { VipSection } from "@/components/vip-section";
 import { LocationSection } from "@/components/location-section";
+import { FaqSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       <CocktailsSection />
       <EventsSection />
 
+      <FaqSection />
       <LocationSection />
 
       <Footer />

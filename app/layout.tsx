@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Premium Lounge & Bar | Downtown Miami Nightlife",
   description:
     "Experience the best nightlife in Downtown Miami with smooth drinks, curated sound, and an exclusive atmosphere.",
-  generator: "v0.app",
+  generator: "Next.js",
   keywords: [
     "Miami bar",
     "lounge Miami",

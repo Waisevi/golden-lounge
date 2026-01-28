@@ -1,0 +1,21 @@
+# GD Lounge
+
+## Description
+GD Lounge is Miami's premier destination for nightlife, combining a high-energy lounge atmosphere with private event spaces and top-tier service. We offer signature cocktails, karaoke, and VIP experiences in a sophisticated setting.
+
+## Key Offerings
+- **Cocktails**: Handcrafted signature drinks mixology-focused bar.
+- **Karaoke**: State-of-the-art karaoke system for entertainment.
+- **VIP Rooms**: Exclusive private rooms for parties and corporate events.
+- **Dining**: Gourmet food options to pair with drinks.
+- **Private Parties**: Full venue booking available for large events.
+
+## Location & Hours
+- **Location**: Miami, FL (Specific address to be confirmed on site)
+- **Hours**: Open late night. Check website for specific daily hours.
+
+## Links
+- **Website**: https://golden-lounge.vercel.app/
+- **Reservations**: https://www.sevenrooms.com/reservations/gdlounge
+- **VIP Booking**: Via "Become a VIP" form on website.
+- **Private Events**: Via "Private Party" form on website.

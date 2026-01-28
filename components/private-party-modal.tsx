@@ -111,7 +111,7 @@ ${message}
                         Private Party
                     </h2>
                     <p className="text-base text-muted-foreground max-w-xl mx-auto mb-6">
-                        Host your exclusive event at Golden Lounge. Tell us about your plans.
+                        Host your exclusive event at GD Lounge. Tell us about your plans.
                     </p>
 
                     {!isSubmitted ? (

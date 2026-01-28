@@ -27,7 +27,7 @@ export function FaqSection() {
         },
         {
             question: "Is there parking available?",
-            answer: "Valet parking is available directly in front of the venue. There is also limited street parking nearby.",
+            answer: "Valet parking is available at Novikov, located directly in front of the venue. There is also limited street parking nearby.",
         }
     ];
 

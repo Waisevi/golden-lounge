@@ -10,9 +10,13 @@ GD Lounge is Miami's premier destination for nightlife, combining a high-energy 
 - **Dining**: Gourmet food options to pair with drinks.
 - **Private Parties**: Full venue booking available for large events.
 
-## Location & Hours
-- **Location**: Miami, FL (Specific address to be confirmed on site)
-- **Hours**: Open late night. Check website for specific daily hours.
+## Location & Services Detail
+- **Address**: 300 S Biscayne Blvd Suite C-202B, Miami, FL 33131
+- **Parking**: Valet available at **Novikov** (directly in front). Limited street parking.
+- **Hours**:
+  - Monday: 9:00 PM – 1:00 AM
+  - Friday: 9:00 PM – 2:00 AM
+  - (Check website for other days/updates)
 
 ## Links
 - **Website**: https://golden-lounge.vercel.app/

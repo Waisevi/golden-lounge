@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { ReserveModal } from "@/components/reserve-modal";
+
+const RESERVE_URL = "https://www.sevenrooms.com/reservations/gdlounge";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -17,12 +18,6 @@ const navLinks = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isReserveModalOpen, setIsReserveModalOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -57,10 +52,12 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <Button
-              onClick={() => setIsReserveModalOpen(true)}
+              asChild
               className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6"
             >
-              Reserve
+              <a href={RESERVE_URL} target="_blank" rel="noopener noreferrer">
+                Reserve
+              </a>
             </Button>
           </div>
 
@@ -90,24 +87,18 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button
-              onClick={() => {
-                setIsMenuOpen(false);
-                setIsReserveModalOpen(true);
-              }}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4"
-            >
-              Reserve
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
+              <a
+                href={RESERVE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Reserve
+              </a>
             </Button>
           </nav>
         </div>
-      )}
-
-      {isMounted && (
-        <ReserveModal
-          isOpen={isReserveModalOpen}
-          onOpenChange={setIsReserveModalOpen}
-        />
       )}
     </header>
   );

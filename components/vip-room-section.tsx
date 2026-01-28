@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getAssetUrl } from "@/lib/assets";
 
 export function VipRoomSection() {
   return (
@@ -8,7 +9,7 @@ export function VipRoomSection() {
           {/* Image Column */}
           <div className="relative w-fit rounded-[2rem] border border-border/40 shadow-2xl overflow-hidden">
             <Image
-              src="/images/gallery/vip.webp"
+              src={getAssetUrl("/images/gallery/vip.webp")}
               alt="VIP Rooms at GD Lounge"
               width={1200}
               height={800}

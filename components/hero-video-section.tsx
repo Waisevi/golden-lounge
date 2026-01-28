@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { getAssetUrl } from "@/lib/assets";
 import { ReserveModal } from "@/components/reserve-modal";
 
 export function HeroVideoSection() {
@@ -10,23 +10,20 @@ export function HeroVideoSection() {
 
   return (
     <section className="relative h-[100svh] w-full overflow-hidden">
-      {/* VIDEO */}
+      {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="h-full w-full object-cover"
-          poster={getAssetUrl("/video/hero-poster.jpg")}
-        >
-          <source src={getAssetUrl("/video/hero.mp4")} type="video/mp4" />
-        </video>
+        <Image
+          src="/hero-bg-VFSG5pOF.webp"
+          alt="GD Lounge atmosphere"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
 
-        {/* overlays */}
-        <div className="pointer-events-none absolute inset-0 bg-black/50" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+        {/* overlays - slightly darker to hide photo defects */}
+        <div className="pointer-events-none absolute inset-0 bg-black/60" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/85" />
       </div>
 
       {/* CONTENT */}
@@ -54,20 +51,22 @@ export function HeroVideoSection() {
           {/* CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 animate-in fade-in slide-in-from-bottom-5 duration-1000">
             <Button
-              onClick={() => setIsReserveModalOpen(true)}
+              asChild
               size="lg"
               className="w-full sm:w-auto rounded-xl bg-primary px-10 py-7 text-lg font-bold shadow-[0_0_30px_rgba(124,58,237,0.5)] hover:bg-primary/90 hover:scale-105 transition-all"
             >
-              Reserve a Table
+              <a href="https://www.sevenrooms.com/reservations/gdlounge" target="_blank" rel="noopener noreferrer">
+                Reserve a Table
+              </a>
             </Button>
 
             <Button
-              asChild
+              onClick={() => setIsReserveModalOpen(true)}
               variant="outline"
               size="lg"
               className="w-full sm:w-auto rounded-xl border-white/30 bg-transparent px-10 py-7 text-lg font-bold text-white backdrop-blur-md hover:bg-transparent hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] hover:scale-105 transition-all"
             >
-              <a href="#gallery">View Gallery</a>
+              Become a VIP
             </Button>
           </div>
         </div>

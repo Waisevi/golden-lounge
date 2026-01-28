@@ -12,7 +12,6 @@ type GalleryItem = {
   id: string;
   image_url: string;
   alt_text: string;
-  order: number;
 };
 
 export function GallerySection() {
@@ -56,21 +55,12 @@ export function GallerySection() {
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {images.map((img, index) => {
-            // Use local files from public/images/gallery for positions 2, 4, 5, 7
-            const order = img.order || (index + 1);
-            const useLocalFile = [2, 4, 5, 7].includes(order);
-            const imageSrc = useLocalFile 
-              ? `/images/gallery/${order}.webp`
-              : getAssetUrl(img.image_url);
-            const modalSrc = useLocalFile
-              ? `/images/gallery/${order}.webp`
-              : getAssetUrl(img.image_url);
-            
+            const imageSrc = getAssetUrl(img.image_url);
             return (
             <Card
               key={img.id}
               className="group relative overflow-hidden bg-card border-border/40 "
-              onClick={() => setSelectedImage(modalSrc)}
+              onClick={() => setSelectedImage(imageSrc)}
             >
               <div className="relative aspect-square">
                 <Image

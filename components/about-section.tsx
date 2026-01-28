@@ -28,7 +28,7 @@ export function AboutSection() {
         const { data } = supabase.storage
           .from("assets")
           .getPublicUrl("video/gd.mp4");
-        
+
         if (data?.publicUrl) {
           setVideoUrl(data.publicUrl);
         }
@@ -78,13 +78,6 @@ export function AboutSection() {
                 than just a venue—it&apos;s an experience. Since opening our
                 doors, we&apos;ve become the go-to destination for those seeking
                 the perfect blend of sophistication and energy.
-              </p>
-              <p>
-                Our commitment to excellence shows in every detail: from our
-                carefully curated cocktail menu to our state-of-the-art sound
-                system. Whether you&apos;re celebrating a special occasion or
-                simply looking for a memorable night out, we deliver an
-                atmosphere that hits different.
               </p>
             </div>
 

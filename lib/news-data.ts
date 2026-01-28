@@ -25,7 +25,7 @@ export const newsArticles: NewsArticle[] = [
       <p>Skip the lines and head straight to the action. Our VIP list ensures you spend your time where it matters.</p>
       <p>Stay tuned for more updates on our upcoming exclusive events.</p>
     `,
-    image: getAssetUrl("/images/events/friday-vibes.webp"),
+    image: getAssetUrl("/images/events/friday-vibes.png"),
     author: "Elena Rodriguez",
     category: "Nightlife",
   },
@@ -44,7 +44,7 @@ export const newsArticles: NewsArticle[] = [
       </ul>
       <p>Visit us this weekend to try them all.</p>
     `,
-    image: getAssetUrl("/images/events/latin-heat.webp"),
+    image: getAssetUrl("/images/events/latin-heat.png"),
     author: "Marco Rossi",
     category: "Cocktails",
   },
@@ -58,7 +58,7 @@ export const newsArticles: NewsArticle[] = [
       <h2>Live Music Schedule</h2>
       <p>Every Sunday starting from 6 PM. Join us for a relaxed evening with stunning views.</p>
     `,
-    image: getAssetUrl("/images/events/sunset-sessions.webp"),
+    image: getAssetUrl("/images/events/sunset-sessions.png"),
     author: "Julian Chen",
     category: "Events",
   },

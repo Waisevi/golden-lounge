@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getAssetUrl } from "@/lib/assets";
 
 export function KaraokeSection() {
   return (
@@ -24,7 +25,7 @@ export function KaraokeSection() {
           {/* Image Column */}
           <div className="relative aspect-[4/3] lg:aspect-[16/10] overflow-hidden rounded-[2rem] border border-border/40 shadow-2xl">
             <Image
-              src="/images/gallery/karaoke.webp"
+              src={getAssetUrl("/images/gallery/karaoke.webp")}
               alt="Karaoke at GD Lounge"
               fill
               className="object-cover"

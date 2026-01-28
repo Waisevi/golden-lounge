@@ -19,7 +19,7 @@ export function ReserveModal({ isOpen, onOpenChange }: ReserveModalProps) {
         <DialogTitle className="sr-only">Join the VIP List</DialogTitle>
         <div className="bg-background border border-border/50 rounded-3xl p-6 lg:p-8">
           <LeadForm
-            formType="reserve"
+            formType="vip"
             title="Join the VIP List"
             description="Be the first to know about exclusive events, special offers, and priority reservations."
             buttonText="Join VIP List"

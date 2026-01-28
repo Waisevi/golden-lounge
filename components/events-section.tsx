@@ -89,34 +89,28 @@ export function EventsSection() {
             <Swiper
             modules={[Navigation]}
             spaceBetween={24}
-            slidesPerView="auto"
+            slidesPerView={1}
             navigation={false}
             watchOverflow={true}
-            updateOnWindowResize={true}
             loop={false}
-            centeredSlides={false}
+            rewind={true}
             breakpoints={{
               768: {
-                slidesPerView: "auto",
+                slidesPerView: 2,
                 spaceBetween: 24,
               },
               1024: {
-                slidesPerView: "auto",
+                slidesPerView: 3,
                 spaceBetween: 32,
-                slidesPerGroup: 1,
               },
             }}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
-              // Принудительно обновляем после инициализации
-              setTimeout(() => {
-                swiper.update();
-              }, 100);
             }}
-              className="[&_.swiper-button-next]:hidden [&_.swiper-button-prev]:hidden"
+            className="[&_.swiper-button-next]:hidden [&_.swiper-button-prev]:hidden"
             >
               {events.map((event, index) => (
-                <SwiperSlide key={`${event.title}-${index}`} className="!w-full md:!w-[calc(50%-12px)] lg:!w-[calc((100%-64px)/3)]">
+                <SwiperSlide key={`${event.title}-${index}`}>
                   <div className="relative aspect-[3/4.5] rounded-[2rem] overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20">
                   {/* Background Image */}
                   <Image

@@ -5,9 +5,10 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { LeadForm } from "@/components/lead-form";
-import { Calendar, User, ArrowLeft, Share2 } from "lucide-react";
+import { Calendar, User, ArrowLeft } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { getAssetUrl } from "@/lib/assets";
+import ReactMarkdown from "react-markdown";
 
 import { Metadata } from "next";
 
@@ -98,7 +99,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
                             {title}
                         </h1>
 
-                        <div className="flex items-center justify-between border-y border-border/40 py-6">
+                        <div className="flex items-center border-y border-border/40 py-6">
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
                                     {author.charAt(0).toUpperCase()}
@@ -108,10 +109,6 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
                                     <p className="text-xs text-muted-foreground">Lounge Contributor</p>
                                 </div>
                             </div>
-
-                            <button className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:border-primary hover:text-white transition-all">
-                                <Share2 className="w-4 h-4" />
-                            </button>
                         </div>
                     </div>
 
@@ -128,10 +125,35 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
 
                     {/* Content */}
                     <div className="mb-24">
-                        <div
-                            className="text-muted-foreground leading-relaxed space-y-6 [&>h2]:text-3xl [&>h2]:font-serif [&>h2]:text-foreground [&>h2]:font-bold [&>h2]:tracking-tight [&>h2]:mt-10 [&>h2]:mb-4 [&>h3]:text-xl [&>h3]:font-serif [&>h3]:text-foreground [&>h3]:font-semibold [&>h3]:mt-8 [&>h3]:mb-3 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-2 [&>li]:text-muted-foreground [&>p]:text-lg sm:[&>p]:text-xl [&>p+h2]:mt-12 [&>p+h3]:mt-10"
-                            dangerouslySetInnerHTML={{ __html: content }}
-                        />
+                        <div className="text-muted-foreground leading-relaxed space-y-6 prose prose-lg prose-invert max-w-none 
+                            [&_h1]:text-4xl [&_h1]:sm:text-5xl [&_h1]:lg:text-6xl [&_h1]:font-serif [&_h1]:text-foreground [&_h1]:font-bold [&_h1]:tracking-tight [&_h1]:mb-6 [&_h1]:mt-12 
+                            [&_h2]:text-3xl [&_h2]:font-serif [&_h2]:text-foreground [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:mt-10 [&_h2]:mb-4 
+                            [&_h3]:text-xl [&_h3]:font-serif [&_h3]:text-foreground [&_h3]:font-semibold [&_h3]:mt-8 [&_h3]:mb-3 
+                            [&_h4]:text-lg [&_h4]:font-serif [&_h4]:text-foreground [&_h4]:font-semibold [&_h4]:mt-6 [&_h4]:mb-2 
+                            [&_p]:text-lg [&_p]:sm:text-xl [&_p]:text-muted-foreground [&_p]:leading-relaxed [&_p]:mb-6 
+                            [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:mb-6 [&_ul_li]:text-muted-foreground [&_ul_li]:text-lg 
+                            [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2 [&_ol]:mb-6 [&_ol_li]:text-muted-foreground [&_ol_li]:text-lg 
+                            [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80 [&_a]:transition-colors
+                            [&_strong]:text-foreground [&_strong]:font-bold 
+                            [&_em]:italic 
+                            [&_blockquote]:border-l-4 [&_blockquote]:border-primary/40 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-muted-foreground [&_blockquote]:my-6
+                            [&_code]:bg-background/50 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm 
+                            [&_pre]:bg-background/50 [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:mb-6 
+                            [&_hr]:border-border/40 [&_hr]:my-8">
+                            <ReactMarkdown
+                                components={{
+                                    a: ({ node, ...props }) => (
+                                        <a
+                                            {...props}
+                                            target={props.href?.startsWith('http') ? '_blank' : undefined}
+                                            rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        />
+                                    ),
+                                }}
+                            >
+                                {content}
+                            </ReactMarkdown>
+                        </div>
                     </div>
 
                     {/* Reservation CTA Area */}

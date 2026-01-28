@@ -7,7 +7,10 @@ const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 /**
  * n8n News Webhook
- * Receives STRICTLY: { english: { title, content, excerpt, tags, published, image } }
+ * Receives: { 
+ *   english: { title, content, excerpt, tags, published, image },
+ *   russian?: { title, content, excerpt } // optional
+ * }
  * - Downloads image from URL and uploads to Supabase Storage
  * - Maps to Supabase: news table
  */
@@ -15,7 +18,7 @@ export async function POST(request: Request) {
     try {
         const body = await request.json();
 
-        // 1. Strict Validation - must have exactly this structure
+        // 1. Strict Validation - must have english object
         if (!body.english) {
             return NextResponse.json(
                 { success: false, error: "Invalid payload: missing 'english' object" },
@@ -24,6 +27,10 @@ export async function POST(request: Request) {
         }
 
         const { title, content, excerpt, tags, published, image } = body.english;
+        
+        // Extract russian data if provided (optional)
+        const russianData = body.russian || {};
+        const { title: titleRu, content: contentRu, excerpt: excerptRu } = russianData;
 
         // Validate required fields
         if (!title || !content) {
@@ -118,22 +125,19 @@ export async function POST(request: Request) {
         // 4. Insert into Supabase
         const supabase = createClient(supabaseUrl, supabaseServiceKey);
         
-        // Prepare data with empty russian object to satisfy schema requirements
+        // Prepare data with english and optional russian fields
         const insertData = {
             slug,
             title_en: title,
             content_en: content,
             excerpt_en: excerpt || "",
+            title_ru: titleRu || "",
+            content_ru: contentRu || "",
+            excerpt_ru: excerptRu || "",
             tags: processedTags,
             image: uploadedImageUrl || "",
             published: typeof published === "boolean" ? published : true,
             updated_at: new Date().toISOString(),
-            // Add empty russian object as required by schema
-            russian: {
-                title: "",
-                content: "",
-                excerpt: "",
-            },
         };
         
         const { data, error } = await supabase

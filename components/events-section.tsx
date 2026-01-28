@@ -19,6 +19,7 @@ type Event = {
   description: string;
   image: string;
   category: string;
+  ticket_url?: string | null;
 };
 
 export function EventsSection() {
@@ -113,9 +114,17 @@ export function EventsSection() {
             }}
             className="[&_.swiper-button-next]:hidden [&_.swiper-button-prev]:hidden"
             >
-              {events.map((event, index) => (
+              {events.map((event, index) => {
+                const ticketUrl = event.ticket_url?.trim() || null;
+                return (
                 <SwiperSlide key={`${event.title}-${index}`}>
-                  <div className="relative aspect-[3/4.5] rounded-[2rem] overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20">
+                  <div
+                    className={`relative aspect-[3/4.5] rounded-[2rem] overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20 ${ticketUrl ? "cursor-pointer" : ""}`}
+                    onClick={() => ticketUrl && window.open(ticketUrl, "_blank", "noopener,noreferrer")}
+                    role={ticketUrl ? "link" : undefined}
+                    tabIndex={ticketUrl ? 0 : undefined}
+                    onKeyDown={(e) => ticketUrl && (e.key === "Enter" || e.key === " ") && (e.preventDefault(), window.open(ticketUrl, "_blank", "noopener,noreferrer"))}
+                  >
                   {/* Background Image */}
                   <Image
                     src={getAssetUrl(event.image)}
@@ -160,7 +169,8 @@ export function EventsSection() {
                   <div className="absolute inset-0 border-[1.5px] border-white/10 rounded-[2rem] pointer-events-none group-hover:border-primary/40 transition-all duration-700 z-30" />
                 </div>
                 </SwiperSlide>
-              ))}
+              );
+              })}
             </Swiper>
           </div>
         </div>

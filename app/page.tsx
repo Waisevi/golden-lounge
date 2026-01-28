@@ -22,6 +22,8 @@ export default function Home() {
       <GallerySection />
       <AboutSection />
 
+      <FoodSection />
+      <CocktailsSection />
       <EventsSection />
 
       <LocationSection />

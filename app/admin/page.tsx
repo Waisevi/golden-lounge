@@ -41,6 +41,7 @@ type Event = {
     description: string;
     image: string;
     category: string;
+    ticket_url?: string;
 };
 
 export default function AdminDashboard() {
@@ -66,6 +67,7 @@ export default function AdminDashboard() {
         description: "",
         image: "",
         category: "Exclusive Night",
+        ticket_url: "",
     });
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -98,6 +100,7 @@ export default function AdminDashboard() {
             description: "",
             image: "",
             category: "Exclusive Night",
+            ticket_url: "",
         });
         setSelectedFile(null);
         setImagePreview(null);
@@ -113,6 +116,7 @@ export default function AdminDashboard() {
             description: event.description,
             image: event.image,
             category: event.category,
+            ticket_url: event.ticket_url ?? "",
         });
         setSelectedFile(null);
         setImagePreview(event.image ? getAssetUrl(event.image) : null);
@@ -320,6 +324,16 @@ export default function AdminDashboard() {
                                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                                     placeholder="Tell guests what to expect..."
                                     className="min-h-[100px]"
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Ticket / sales URL</label>
+                                <Input
+                                    type="url"
+                                    value={formData.ticket_url}
+                                    onChange={(e) => setFormData({ ...formData, ticket_url: e.target.value })}
+                                    placeholder="https://..."
                                 />
                             </div>
 

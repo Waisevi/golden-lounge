@@ -32,8 +32,8 @@ export function VipSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Content Column */}
-          <div>
+          {/* Content Column - Bottom on Mobile (order-2), Left on Desktop */}
+          <div className="order-2 lg:order-1">
             <div className="mb-6">
               <span className="text-sm font-bold text-accent uppercase tracking-[0.2em]">Exclusivity</span>
               <h2 className="mt-2 text-4xl lg:text-5xl font-bold text-foreground font-serif leading-tight">
@@ -65,9 +65,13 @@ export function VipSection() {
             </Button>
           </div>
 
-          {/* Media Column */}
-          <div>
-            <MediaCarousel media={VIP_MEDIA} className="shadow-[0_0_50px_rgba(245,158,11,0.15)]" />
+          {/* Media Column - Top on Mobile (order-1), Right on Desktop */}
+          <div className="order-1 lg:order-2 h-[500px] lg:h-auto w-full max-w-[300px] lg:max-w-none mx-auto lg:mx-0">
+            <MediaCarousel
+              media={VIP_MEDIA}
+              aspectRatio="h-full"
+              className="shadow-[0_0_50px_rgba(245,158,11,0.15)] h-full"
+            />
           </div>
         </div>
       </div>

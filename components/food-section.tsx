@@ -38,7 +38,7 @@ export function FoodSection() {
           if (nameLower.includes("brul") || nameLower.includes("crem")) {
             return { ...item, name: "Ice Cream", image: "/ice-cream.webp" };
           }
-          if (nameLower.includes("roll") || nameLower.includes("dragon")) {
+          if (nameLower.includes("roll") || nameLower.includes("dragon") || nameLower.includes("crab") || nameLower.includes("alaskan")) {
             return { ...item, image: "/food/roll.webp" };
           }
           return item;

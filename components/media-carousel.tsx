@@ -30,11 +30,11 @@ const resolveUrl = (src: string, isLocal?: boolean) => {
     return isLocal ? src : getAssetUrl(src);
 };
 
-export function MediaCarousel({
-    media,
+media,
     aspectRatio = "aspect-[4/5]",
-    className = ""
-}: MediaCarouselProps) {
+    className = "",
+    priority = false // New prop, defaults to false for lazy loading
+}: MediaCarouselProps & { priority?: boolean }) {
     const swiperRef = useRef<SwiperType | null>(null);
     const [isMuted, setIsMuted] = useState(true);
 
@@ -64,7 +64,10 @@ export function MediaCarousel({
         if (activeVideo) {
             activeVideo.muted = isMuted; // Sync mute state
             activeVideo.currentTime = 0; // Optional: Restart video on slide enter
-            activeVideo.play().catch((e) => console.log("Autoplay blocked:", e));
+            const playPromise = activeVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch((e) => console.log("Autoplay blocked/deferred:", e));
+            }
         }
     };
 
@@ -102,7 +105,7 @@ export function MediaCarousel({
                                         muted={isMuted}
                                         playsInline
                                         webkit-playsinline="true"
-                                        preload="auto"
+                                        preload="metadata" // Changed from auto to metadata for better page speed
                                     >
                                         <source src={resolveUrl(item.src, item.isLocal)} />
                                         Your browser does not support the video tag.
@@ -112,6 +115,7 @@ export function MediaCarousel({
                                         <button
                                             onClick={toggleMute}
                                             className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-black/60 transition-all"
+                                            aria-label={isMuted ? "Unmute video" : "Mute video"}
                                         >
                                             {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                                         </button>
@@ -131,8 +135,8 @@ export function MediaCarousel({
                                     fill
                                     className="object-cover"
                                     sizes="(max-width: 768px) 100vw, 50vw"
-                                    priority={index === 0}
-                                    unoptimized={true} // Disable optimization globally to fix 400 errors
+                                    priority={index === 0 && priority} // Only if prop priority is true
+                                    unoptimized={true} // Keep unoptimized for now as requested before
                                 />
                             )}
 
@@ -143,15 +147,23 @@ export function MediaCarousel({
                 ))}
             </Swiper>
 
-            {/* Navigation Arrows */}
+            {/* Navigation Arrows - Converted to Buttons for Accessibility */}
             {media.length > 1 && (
                 <>
-                    <div className="custom-swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
+                    <button
+                        type="button"
+                        aria-label="Previous slide"
+                        className="custom-swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100"
+                    >
                         <ChevronLeft className="w-5 h-5" />
-                    </div>
-                    <div className="custom-swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
+                    </button>
+                    <button
+                        type="button"
+                        aria-label="Next slide"
+                        className="custom-swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100"
+                    >
                         <ChevronRight className="w-5 h-5" />
-                    </div>
+                    </button>
                 </>
             )}
 

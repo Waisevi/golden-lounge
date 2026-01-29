@@ -37,6 +37,12 @@ export default function SmsOptInPage() {
                             buttonText="Subscribe"
                         />
                     </div>
+
+                    <div className="mt-8 text-center text-sm text-muted-foreground space-y-1">
+                        <p className="font-bold text-foreground text-base">GD Lounge</p>
+                        <p>300 S Biscayne Blvd C-202B, Miami, FL</p>
+                        <p>Phone: (305) 249-1222</p>
+                    </div>
                 </div>
             </div>
 

@@ -73,15 +73,11 @@ export default function TermsPage() {
                         </section>
 
                         <section>
-                            <h2>7. SMS Terms</h2>
-                            <p>By opting into receiving SMS messages from GD Lounge, you agree to the following terms:</p>
-                            <ul>
-                                <li><strong>Consent:</strong> SMS messaging is optional and based on your explicit checkbox consent.</li>
-                                <li><strong>Opt-Out:</strong> You may opt out of receiving messages at any time by replying STOP.</li>
-                                <li><strong>Help:</strong> For assistance, reply HELP or contact us at reservations@gdmiami.com.</li>
-                                <li><strong>Frequency & Rates:</strong> Message frequency may vary. Message & data rates may apply.</li>
-                                <li><strong>Carriers:</strong> Carriers are not liable for delayed or undelivered messages.</li>
-                            </ul>
+                            <h2>SMS Terms</h2>
+                            <p>GD Lounge may offer optional SMS communications to users who explicitly opt in via consent checkboxes on our website forms.</p>
+                            <p>SMS messages may include ticket confirmations, event reminders, reservation updates, private event coordination, and promotional announcements (marketing messages are sent only if separately opted in).</p>
+                            <p>Message frequency may vary. Message & data rates may apply. You may opt out at any time by replying STOP or request help by replying HELP.</p>
+                            <p>SMS participation is optional and not required to submit a form.</p>
                         </section>
 
                         <section>

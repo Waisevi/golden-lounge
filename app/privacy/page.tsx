@@ -61,14 +61,16 @@ export default function PrivacyPage() {
 
                         <section>
                             <h2>5. SMS Communications</h2>
-                            <p>We value your privacy and the information you consent to share in relation to our SMS marketing service. We use this information to send you text notifications (for your ticket confirmations, reservation updates, event reminders), regarding your reservation, including abandoned checkout reminders, marketing offers, and transactional texts, including requests for reviews from us.</p>
-                            <ul>
-                                <li><strong>Use of Information:</strong> GD Lounge may send SMS for: ticket confirmations, reservation updates, event reminders, and promotional messages (only if user opted in).</li>
-                                <li><strong>No Sharing:</strong> We do not sell, rent, or share your phone numbers or mobile information with third parties or affiliates for marketing/promotional purposes. We only share with our SMS service providers to deliver the messages.</li>
-                                <li><strong>Opt-Out:</strong> You can opt out of receiving SMS messages at any time by replying STOP to any message.</li>
-                                <li><strong>Help:</strong> Reply HELP for assistance.</li>
-                                <li><strong>Rates:</strong> Message & data rates may apply.</li>
-                            </ul>
+                            <p>By providing your phone number and opting in via an unchecked consent checkbox, you agree to receive SMS messages from GD Lounge.</p>
+                            <p>SMS messages may include event updates, ticket confirmations, reservation reminders, private event coordination, and promotional messages (only if you explicitly opt in to marketing messages).</p>
+                            <p>Message frequency may vary. Message & data rates may apply. You may opt out at any time by replying STOP or get help by replying HELP.</p>
+                            <p>We do not sell, rent, or share phone numbers with third parties, except for SMS service providers used to deliver messages.</p>
+
+                            <div className="mt-4 pt-4 border-t border-border/30 text-sm">
+                                <p className="font-bold text-foreground">GD Lounge</p>
+                                <p>300 S Biscayne Blvd Suite C-202B, Miami, FL 33131</p>
+                                <p>Phone: (305) 249-1222 | Email: reservations@gdmiami.com</p>
+                            </div>
                         </section>
 
                         <section>

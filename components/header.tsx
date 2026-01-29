@@ -52,44 +52,41 @@ export function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/nav:w-full" />
               </Link>
             ))}
-            {/* Private Party Link */}
+            {/* CTA Buttons */}
+            <div className="hidden lg:flex items-center gap-3">
+              <Button
+                variant="outline"
+                className="border-primary/50 text-white hover:bg-primary/20 hover:border-primary hover:text-primary rounded-full px-5"
+                onClick={() => setIsPrivatePartyModalOpen(true)}
+              >
+                Private Party
+              </Button>
+              <Button
+                asChild
+                className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6"
+              >
+                <a href={RESERVE_URL} target="_blank" rel="noopener noreferrer">
+                  Reserve
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                className="border-primary/50 text-primary hover:bg-primary/20 hover:border-primary hover:text-primary rounded-full px-5"
+                onClick={() => setIsVipModalOpen(true)}
+              >
+                Become a VIP
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
             <button
-              onClick={() => setIsPrivatePartyModalOpen(true)}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 relative group/nav"
+              type="button"
+              className="lg:hidden p-2 text-foreground"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
-              Private Party
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/nav:w-full" />
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
-          </nav>
-
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button
-              asChild
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6"
-            >
-              <a href={RESERVE_URL} target="_blank" rel="noopener noreferrer">
-                Reserve
-              </a>
-            </Button>
-            <Button
-              variant="outline"
-              className="border-primary/50 text-primary hover:bg-primary/20 hover:border-primary hover:text-primary rounded-full px-5"
-              onClick={() => setIsVipModalOpen(true)}
-            >
-              Become a VIP
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="lg:hidden p-2 text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </div>
 

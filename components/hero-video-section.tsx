@@ -4,9 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ReserveModal } from "@/components/reserve-modal";
+import { PrivatePartyModal } from "@/components/private-party-modal";
 
 export function HeroVideoSection() {
   const [isReserveModalOpen, setIsReserveModalOpen] = useState(false);
+  const [isPrivatePartyModalOpen, setIsPrivatePartyModalOpen] = useState(false);
 
   return (
     <section className="relative h-[100svh] w-full overflow-hidden">
@@ -61,12 +63,12 @@ export function HeroVideoSection() {
             </Button>
 
             <Button
-              onClick={() => setIsReserveModalOpen(true)}
+              onClick={() => setIsPrivatePartyModalOpen(true)}
               variant="outline"
               size="lg"
               className="w-full sm:w-auto rounded-xl border-white/30 bg-transparent px-10 py-7 text-lg font-bold text-white backdrop-blur-md hover:bg-transparent hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:scale-105 transition-all"
             >
-              Become a VIP
+              Private Party
             </Button>
           </div>
         </div>
@@ -75,6 +77,11 @@ export function HeroVideoSection() {
       <ReserveModal
         isOpen={isReserveModalOpen}
         onOpenChange={setIsReserveModalOpen}
+      />
+
+      <PrivatePartyModal
+        isOpen={isPrivatePartyModalOpen}
+        onOpenChange={setIsPrivatePartyModalOpen}
       />
     </section>
   );

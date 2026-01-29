@@ -30,13 +30,13 @@ export function LoungeSection() {
         <section id="lounge" className="py-24 lg:py-32 bg-background border-b border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    {/* Media Column - Left on Desktop */}
-                    <div className="order-2 lg:order-1">
+                    {/* Media Column - Media Top on Mobile (order-1), Left on Desktop (order-1) */}
+                    <div className="order-1 lg:order-1">
                         <MediaCarousel media={LOUNGE_MEDIA} className="shadow-[0_0_50px_rgba(245,158,11,0.15)]" />
                     </div>
 
-                    {/* Content Column */}
-                    <div className="order-1 lg:order-2">
+                    {/* Content Column - Content Bottom on Mobile (order-2), Right on Desktop (order-2) */}
+                    <div className="order-2 lg:order-2">
                         <div className="mb-6">
                             <span className="text-sm font-bold text-primary uppercase tracking-[0.2em]">The Experience</span>
                             <h2 className="mt-2 text-4xl lg:text-5xl font-bold text-foreground font-serif leading-tight">

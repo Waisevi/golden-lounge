@@ -84,14 +84,16 @@ export function MediaCarousel({
                                 <>
                                     <video
                                         ref={videoRef}
-                                        src={resolveUrl(item.src, item.isLocal)}
                                         poster={item.poster ? resolveUrl(item.poster, item.isLocal) : undefined}
                                         className="absolute inset-0 w-full h-full object-cover"
                                         loop
                                         muted={isMuted}
                                         autoPlay
                                         playsInline
-                                    />
+                                    >
+                                        <source src={resolveUrl(item.src, item.isLocal)} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
                                     {/* Video Controls Overlay */}
                                     <div className="absolute bottom-6 right-6 flex items-center gap-3 z-20">
                                         <button
@@ -117,6 +119,7 @@ export function MediaCarousel({
                                     className="object-cover"
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                     priority={index === 0}
+                                    unoptimized={item.isLocal} // Bypass optimization for local files to avoid 400 errors
                                 />
                             )}
 

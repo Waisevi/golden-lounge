@@ -32,7 +32,14 @@ export function FoodSection() {
       if (error) {
         console.error("Error fetching food:", error.message);
       } else if (data) {
-        setFoodItems(data as any);
+        // Temporary override for Creme Brulee -> Ice Cream
+        const updatedData = data.map((item: any) => {
+          if (item.name.toLowerCase().includes("brul") || item.name.toLowerCase().includes("crem")) {
+            return { ...item, name: "Ice Cream", image: "/ice-cream.webp" };
+          }
+          return item;
+        });
+        setFoodItems(updatedData);
       }
       setLoading(false);
     }
@@ -59,7 +66,7 @@ export function FoodSection() {
             >
               <div className="relative aspect-square overflow-hidden">
                 <Image
-                  src={getAssetUrl(item.image)}
+                  src={item.image.startsWith("/") ? item.image : getAssetUrl(item.image)}
                   alt={item.name}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"

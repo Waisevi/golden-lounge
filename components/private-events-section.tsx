@@ -6,14 +6,10 @@ import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 import { PrivatePartyModal } from "@/components/private-party-modal";
 
 const EVENTS_MEDIA: MediaItem[] = [
-    {
-        type: "video",
-        src: "/videos/events.mp4",
-        poster: "/images/gallery/events.webp",
-        alt: "Private Events"
-    },
-    { type: "image", src: "/images/gallery/birthday.webp", alt: "Birthday Celebrations" },
-    { type: "image", src: "/images/gallery/corporate.webp", alt: "Corporate Events" },
+    { type: "image", src: "/lounge5.webp", alt: "Private Event 1", isLocal: true },
+    { type: "image", src: "/lounge6.webp", alt: "Private Event 2", isLocal: true },
+    { type: "image", src: "/lounge7.webp", alt: "Private Event 3", isLocal: true },
+    { type: "image", src: "/lounge8.webp", alt: "Private Event 4", isLocal: true },
 ];
 
 const FEATURES = [

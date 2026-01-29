@@ -6,14 +6,10 @@ import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 import { PrivatePartyModal } from "@/components/private-party-modal"; // Or specific VIP modal if differentiation needed
 
 const VIP_MEDIA: MediaItem[] = [
-  {
-    type: "video",
-    src: "/videos/vip-room.mp4",
-    poster: "/images/gallery/vip.webp",
-    alt: "VIP Room Experience"
-  },
-  { type: "image", src: "/images/gallery/vip-2.webp", alt: "Private Seating" },
-  { type: "image", src: "/images/gallery/karaoke.webp", alt: "In-Room Karaoke" },
+  { type: "image", src: "/vip1.webp", alt: "VIP Experience 1", isLocal: true },
+  { type: "image", src: "/vip2.webp", alt: "VIP Experience 2", isLocal: true },
+  { type: "image", src: "/vip3.webp", alt: "VIP Experience 3", isLocal: true },
+  { type: "image", src: "/vip4.webp", alt: "VIP Experience 4", isLocal: true },
 ];
 
 const FEATURES = [

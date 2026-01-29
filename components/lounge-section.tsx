@@ -3,17 +3,15 @@
 import { Button } from "@/components/ui/button";
 import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 
-const LOUNGE_MEDIA: MediaItem[] = [
-    {
-        type: "video",
+{
+    type: "video",
         src: "/lounge-video-main.mp4",
-        // poster: "/lounge1.png", // Removed poster as user requested "video immediately"
-        alt: "Lounge Content",
-        isLocal: true,
+            alt: "Lounge Content",
+                isLocal: true,
     },
-    { type: "image", src: "/lounge1.webp", alt: "Lounge Atmosphere", isLocal: true },
-    { type: "image", src: "/l2.webp", alt: "Lounge Vibes 2", isLocal: true },
-    { type: "image", src: "/l3.webp", alt: "Lounge Vibes 3", isLocal: true },
+{ type: "image", src: "/lounge1.webp", alt: "Lounge Atmosphere 1", isLocal: true },
+{ type: "image", src: "/lounge2.webp", alt: "Lounge Atmosphere 2", isLocal: true },
+{ type: "image", src: "/lounge3.webp", alt: "Lounge Atmosphere 3", isLocal: true },
 ];
 
 const FEATURES = [

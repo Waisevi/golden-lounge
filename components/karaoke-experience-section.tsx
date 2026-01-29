@@ -6,14 +6,9 @@ import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 import { PrivatePartyModal } from "@/components/private-party-modal";
 
 const KARAOKE_MEDIA: MediaItem[] = [
-    {
-        type: "video",
-        src: "/videos/karaoke-fun.mp4",
-        poster: "/images/gallery/karaoke-2.webp", // Ensure this image exists or use fallback
-        alt: "Karaoke Fun"
-    },
-    { type: "image", src: "/images/gallery/cocktail-2.webp", alt: "Drinks & Singing" },
-    { type: "image", src: "/images/gallery/party-crowd.webp", alt: "Party Vibe" },
+    { type: "image", src: "/kar1.webp", alt: "Karaoke Fun 1", isLocal: true },
+    { type: "image", src: "/kar2.webp", alt: "Karaoke Fun 2", isLocal: true },
+    { type: "image", src: "/kar3.webp", alt: "Karaoke Fun 3", isLocal: true },
 ];
 
 const FEATURES = [

@@ -6,7 +6,10 @@ import { HeroVideoSection } from "@/components/hero-video-section";
 import { Footer } from "@/components/footer";
 
 // Dynamic Imports for performance (Lazy loading below-the-fold content)
+import { LazyLoadSection } from "@/components/lazy-load-section";
+
 const LoungeSection = dynamic(() => import("@/components/lounge-section").then(mod => mod.LoungeSection));
+// ... (rest are same)
 const VipSection = dynamic(() => import("@/components/vip-section").then(mod => mod.VipSection));
 const KaraokeExperienceSection = dynamic(() => import("@/components/karaoke-experience-section").then(mod => mod.KaraokeExperienceSection));
 const PrivateEventsSection = dynamic(() => import("@/components/private-events-section").then(mod => mod.PrivateEventsSection));
@@ -22,21 +25,43 @@ export default function Home() {
       <Header />
       <HeroVideoSection />
 
-      {/* 4 Main Content Blocks requested by client */}
-      <LoungeSection />
-      <VipSection />
-      <KaraokeExperienceSection />
-      <PrivateEventsSection />
+      {/* 4 Main Content Blocks requested by client - Wrapped in Aggressive Lazy Loader */}
+      <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]">
+        <LoungeSection />
+      </LazyLoadSection>
+
+      <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]">
+        <VipSection />
+      </LazyLoadSection>
+
+      <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]">
+        <KaraokeExperienceSection />
+      </LazyLoadSection>
+
+      <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]">
+        <PrivateEventsSection />
+      </LazyLoadSection>
+
 
       {/* Supporting Sections */}
       {/* <GallerySection /> */}
 
       {/* Keeping these for additional context/SEO, can be removed if client counts them as clutter, but usually good to keep */}
-      <FoodSection />
-      <CocktailsSection />
+      <LazyLoadSection className="min-h-[400px]">
+        <FoodSection />
+      </LazyLoadSection>
 
-      <FaqSection />
-      <LocationSection />
+      <LazyLoadSection className="min-h-[400px]">
+        <CocktailsSection />
+      </LazyLoadSection>
+
+      <LazyLoadSection className="min-h-[300px]">
+        <FaqSection />
+      </LazyLoadSection>
+
+      <LazyLoadSection className="min-h-[300px]">
+        <LocationSection />
+      </LazyLoadSection>
 
       <Footer />
 

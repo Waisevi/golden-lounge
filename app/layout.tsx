@@ -1,8 +1,11 @@
 import React from "react"
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+
+const GA4_MEASUREMENT_ID = "G-2CT2Z6R875";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif", display: "swap" });
@@ -56,6 +59,18 @@ export default function RootLayout({
         className={`${inter.className} ${playfair.variable} font-sans antialiased bg-background text-foreground`}
         suppressHydrationWarning
       >
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA4_MEASUREMENT_ID}');
+          `}
+        </Script>
         {children}
         <Toaster position="top-center" richColors />
         <Analytics />

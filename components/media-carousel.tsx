@@ -36,24 +36,37 @@ export function MediaCarousel({
     className = ""
 }: MediaCarouselProps) {
     const swiperRef = useRef<SwiperType | null>(null);
-    const videoRef = useRef<HTMLVideoElement | null>(null);
-    const [isPlaying, setIsPlaying] = useState(true);
     const [isMuted, setIsMuted] = useState(true);
 
     const toggleMute = (e: React.MouseEvent) => {
         e.stopPropagation();
-        if (videoRef.current) {
-            videoRef.current.muted = !isMuted;
-            setIsMuted(!isMuted);
+        const swiper = swiperRef.current;
+        if (swiper) {
+            const activeSlide = swiper.slides[swiper.activeIndex];
+            const activeVideo = activeSlide.querySelector("video");
+            if (activeVideo) {
+                activeVideo.muted = !isMuted;
+                setIsMuted(!isMuted);
+            }
         }
     };
 
-    // Force play on mount to ensure mobile autoplay
-    React.useEffect(() => {
-        if (videoRef.current) {
-            videoRef.current.play().catch(e => console.log("Autoplay blocked:", e));
+    const handleSlideChange = (swiper: SwiperType) => {
+        // Pause all videos in the swiper
+        const allVideos = swiper.el.querySelectorAll("video");
+        allVideos.forEach((v) => {
+            v.pause();
+        });
+
+        // Play video in the active slide
+        const activeSlide = swiper.slides[swiper.activeIndex];
+        const activeVideo = activeSlide.querySelector("video");
+        if (activeVideo) {
+            activeVideo.muted = isMuted; // Sync mute state
+            activeVideo.currentTime = 0; // Optional: Restart video on slide enter
+            activeVideo.play().catch((e) => console.log("Autoplay blocked:", e));
         }
-    }, []);
+    };
 
     return (
         <div className={`relative group rounded-[2rem] overflow-hidden shadow-2xl bg-black ${className}`}>
@@ -66,23 +79,16 @@ export function MediaCarousel({
                     prevEl: '.custom-swiper-button-prev',
                 }}
                 pagination={{ clickable: true, dynamicBullets: true }}
-                loop={false} // Disabled loop to prevent React Ref issues with cloned slides causing video playback failure
+                loop={true}
                 className="h-full w-full"
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
+                    // Initial check for video on mount
+                    setTimeout(() => {
+                        handleSlideChange(swiper);
+                    }, 100);
                 }}
-                onSlideChange={(swiper) => {
-                    // Pause video if moving away from it
-                    if (videoRef.current) {
-                        if (swiper.realIndex !== 0) {
-                            videoRef.current.pause();
-                            setIsPlaying(false);
-                        } else {
-                            videoRef.current.play().catch(console.error);
-                            setIsPlaying(true);
-                        }
-                    }
-                }}
+                onSlideChange={handleSlideChange}
             >
                 {media.map((item, index) => (
                     <SwiperSlide key={`${item.src}-${index}`} className="h-full w-full">
@@ -90,12 +96,10 @@ export function MediaCarousel({
                             {item.type === "video" ? (
                                 <>
                                     <video
-                                        ref={videoRef}
                                         poster={item.poster ? resolveUrl(item.poster, item.isLocal) : undefined}
                                         className="absolute inset-0 w-full h-full object-cover"
                                         loop
                                         muted={isMuted}
-                                        autoPlay
                                         playsInline
                                         webkit-playsinline="true"
                                         preload="auto"
@@ -138,27 +142,17 @@ export function MediaCarousel({
                     </SwiperSlide>
                 ))}
 
-                {/* Helper Instructions - Optional */}
+                {/* Navigation Arrows */}
                 {media.length > 1 && (
-                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-                        <div className="w-12 h-1 rounded-full bg-white/20 overflow-hidden">
-                            <div className="h-full bg-white/80 w-1/2 animate-pulse" />
+                    <>
+                        <div className="custom-swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
+                            <ChevronLeft className="w-5 h-5" />
                         </div>
-                    </div>
+                        <div className="custom-swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
+                            <ChevronRight className="w-5 h-5" />
+                        </div>
+                    </>
                 )}
-            </Swiper>
-
-            {/* Navigation Arrows */}
-            {media.length > 1 && (
-                <>
-                    <div className="custom-swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
-                        <ChevronLeft className="w-5 h-5" />
-                    </div>
-                    <div className="custom-swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
-                        <ChevronRight className="w-5 h-5" />
-                    </div>
-                </>
-            )}
         </div>
     );
 }

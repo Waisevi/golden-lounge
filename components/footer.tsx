@@ -99,7 +99,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://www.google.com/maps/search/Downtown+Miami"
+                    href="https://share.google/P8IyjzbLyQo6ApO4s"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 sm:gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"

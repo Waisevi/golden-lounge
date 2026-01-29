@@ -11,7 +11,20 @@ export function FaqSection() {
     const faqs = [
         {
             question: "Where is GD Lounge located?",
-            answer: "We are located at 300 S Biscayne Blvd Suite C-202B, Miami, FL 33131. Access is available via the main building entrance.",
+            answer: (
+                <span>
+                    We are located at{" "}
+                    <a
+                        href="https://share.google/P8IyjzbLyQo6ApO4s"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-primary"
+                    >
+                        300 S Biscayne Blvd Suite C-202B, Miami, FL 33131
+                    </a>
+                    . Access is available via the main building entrance.
+                </span>
+            ),
         },
         {
             question: "How can I make a reservation?",

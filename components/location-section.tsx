@@ -68,7 +68,14 @@ export function LocationSection() {
                     >
                       <span className="font-medium">GD Lounge</span>
                       <br />
-                      300 S Biscayne Blvd Suite C-202B, Miami, FL 33131, United
+                      <a
+                        href="https://share.google/P8IyjzbLyQo6ApO4s"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary transition-colors"
+                      >
+                        300 S Biscayne Blvd Suite C-202B, Miami, FL 33131, United States
+                      </a>
                       States
                     </a>
                   </div>

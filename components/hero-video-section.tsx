@@ -32,19 +32,20 @@ export function HeroVideoSection() {
       {/* CONTENT */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-[72px] text-center">
         <div className="max-w-4xl space-y-10">
-          import {Mic} from "lucide-react";
-
-          // ... inside component ...
-
           {/* Badges Row */}
           <div className="flex flex-wrap items-center justify-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-700">
             {/* Location badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+            <a
+              href="https://share.google/P8IyjzbLyQo6ApO4s"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md hover:bg-white/20 transition-colors"
+            >
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-accent animate-pulse" />
               <span className="text-xs font-semibold tracking-[0.3em] uppercase text-white">
                 Downtown Miami
               </span>
-            </div>
+            </a>
 
             {/* Karaoke badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">

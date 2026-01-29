@@ -29,7 +29,14 @@ export default function SmsOptInPage() {
                         </p>
                         <div className="mt-6 space-y-1">
                             <p className="font-bold text-foreground text-lg">GD Lounge</p>
-                            <p className="text-foreground">300 S Biscayne Blvd C-202B, Miami, FL</p>
+                            <a
+                                href="https://share.google/P8IyjzbLyQo6ApO4s"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-foreground hover:text-primary transition-colors block"
+                            >
+                                300 S Biscayne Blvd C-202B, Miami, FL
+                            </a>
                             <p className="text-foreground">Phone: (305) 249-1222</p>
                         </div>
                     </div>

@@ -69,7 +69,7 @@ export default function PrivacyPage() {
                             <div className="mt-4 pt-4 border-t border-border/30 text-sm">
                                 <p className="font-bold text-foreground">GD Lounge</p>
                                 <p>
-                                    <a href="https://share.google/P8IyjzbLyQo6ApO4s" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                                    <a href="https://maps.app.goo.gl/odceBHiT9caqxArM7?g_st=ic" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                                         300 S Biscayne Blvd Suite C-202B, Miami, FL 33131
                                     </a>
                                 </p>
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
                             <p>If you have questions or comments about this notice, you may email us at reservations@gdmiami.com or by post to:</p>
                             <p className="text-foreground">
                                 GD Lounge & Bar<br />
-                                <a href="https://share.google/P8IyjzbLyQo6ApO4s" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                                <a href="https://maps.app.goo.gl/odceBHiT9caqxArM7?g_st=ic" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                                     300 S Biscayne Blvd Suite C-202B<br />
                                     Miami, FL 33131
                                 </a>

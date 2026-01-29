@@ -36,7 +36,7 @@ export function HeroVideoSection() {
           <div className="flex flex-wrap items-center justify-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-700">
             {/* Location badge */}
             <a
-              href="https://share.google/P8IyjzbLyQo6ApO4s"
+              href="https://maps.app.goo.gl/odceBHiT9caqxArM7?g_st=ic"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md hover:bg-white/20 transition-colors"

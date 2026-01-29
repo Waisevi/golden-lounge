@@ -15,7 +15,7 @@ export function FaqSection() {
                 <span>
                     We are located at{" "}
                     <a
-                        href="https://share.google/P8IyjzbLyQo6ApO4s"
+                        href="https://maps.app.goo.gl/odceBHiT9caqxArM7?g_st=ic"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="underline hover:text-primary"

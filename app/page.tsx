@@ -6,7 +6,7 @@ import { HeroVideoSection } from "@/components/hero-video-section";
 import { Footer } from "@/components/footer";
 
 // Dynamic Imports for performance (Lazy loading below-the-fold content)
-import { LazyLoadSection } from "@/components/lazy-load-section";
+import LazyLoadSection from "@/components/lazy-load-section";
 
 const LoungeSection = dynamic(() => import("@/components/lounge-section").then(mod => mod.LoungeSection));
 // ... (rest are same)

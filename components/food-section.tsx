@@ -32,10 +32,14 @@ export function FoodSection() {
       if (error) {
         console.error("Error fetching food:", error.message);
       } else if (data) {
-        // Temporary override for Creme Brulee -> Ice Cream
+        // Temporary override for Creme Brulee -> Ice Cream & Roll Image
         const updatedData = data.map((item: any) => {
-          if (item.name.toLowerCase().includes("brul") || item.name.toLowerCase().includes("crem")) {
+          const nameLower = item.name.toLowerCase();
+          if (nameLower.includes("brul") || nameLower.includes("crem")) {
             return { ...item, name: "Ice Cream", image: "/ice-cream.webp" };
+          }
+          if (nameLower.includes("roll") || nameLower.includes("dragon")) {
+            return { ...item, image: "/food/roll.webp" };
           }
           return item;
         });

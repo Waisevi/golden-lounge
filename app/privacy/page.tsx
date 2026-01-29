@@ -60,6 +60,18 @@ export default function PrivacyPage() {
                         </section>
 
                         <section>
+                            <h2>5. SMS Communications</h2>
+                            <p>We value your privacy and the information you consent to share in relation to our SMS marketing service. We use this information to send you text notifications (for your ticket confirmations, reservation updates, event reminders), regarding your reservation, including abandoned checkout reminders, marketing offers, and transactional texts, including requests for reviews from us.</p>
+                            <ul>
+                                <li><strong>Use of Information:</strong> GD Lounge may send SMS for: ticket confirmations, reservation updates, event reminders, and promotional messages (only if user opted in).</li>
+                                <li><strong>No Sharing:</strong> We do not sell, rent, or share your phone numbers or mobile information with third parties or affiliates for marketing/promotional purposes. We only share with our SMS service providers to deliver the messages.</li>
+                                <li><strong>Opt-Out:</strong> You can opt out of receiving SMS messages at any time by replying STOP to any message.</li>
+                                <li><strong>Help:</strong> Reply HELP for assistance.</li>
+                                <li><strong>Rates:</strong> Message & data rates may apply.</li>
+                            </ul>
+                        </section>
+
+                        <section>
                             <h2>5. Security of Your Information</h2>
                             <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable.</p>
                         </section>

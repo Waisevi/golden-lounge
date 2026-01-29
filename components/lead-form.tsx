@@ -236,7 +236,7 @@ export function LeadForm({
                                 htmlFor="agreeNonMarketing"
                                 className="text-xs leading-relaxed text-muted-foreground cursor-pointer select-none"
                             >
-                                I consent to receive non-marketing text messages from GD Lounge about your inquiry, account, services, and notifications. Message frequency varies. Message & data rates may apply. Text HELP for assistance. Reply STOP to opt out.
+                                I consent to receive non-marketing SMS messages from GD Lounge related to ticket purchases, event reminders, reservations, schedule updates, and important venue notifications. Message frequency may vary. Message & data rates may apply. Reply HELP for assistance. Reply STOP to opt out.
                             </label>
                         </div>
 
@@ -251,7 +251,7 @@ export function LeadForm({
                                 htmlFor="agreeMarketing"
                                 className="text-xs leading-relaxed text-muted-foreground cursor-pointer select-none"
                             >
-                                I consent to receive marketing text messages from GD Lounge at the number provided. Message frequency varies. Message & data rates may apply. Text HELP for assistance. Reply STOP to opt out.
+                                I consent to receive marketing SMS messages from GD Lounge, including event announcements and special offers. Message frequency may vary. Message & data rates may apply. Reply HELP for assistance. Reply STOP to opt out.
                             </label>
                         </div>
                     </div>
@@ -263,10 +263,14 @@ export function LeadForm({
                         </div>
                     )}
 
+                    <p className="text-[10px] text-muted-foreground leading-tight text-center pt-2">
+                        By submitting this form, you agree to receive SMS messages only if you checked a consent box above. Message frequency may vary. Message & data rates may apply. Reply STOP to opt out or HELP for help.
+                    </p>
+
                     <Button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full h-10 text-base font-bold rounded-lg mt-3 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300"
+                        className="w-full h-10 text-base font-bold rounded-lg mt-1 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300"
                     >
                         {isLoading ? "Sending..." : buttonText}
                     </Button>

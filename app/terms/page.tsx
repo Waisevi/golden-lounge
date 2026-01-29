@@ -73,7 +73,19 @@ export default function TermsPage() {
                         </section>
 
                         <section>
-                            <h2>7. Changes to Terms</h2>
+                            <h2>7. SMS Terms</h2>
+                            <p>By opting into receiving SMS messages from GD Lounge, you agree to the following terms:</p>
+                            <ul>
+                                <li><strong>Consent:</strong> SMS messaging is optional and based on your explicit checkbox consent.</li>
+                                <li><strong>Opt-Out:</strong> You may opt out of receiving messages at any time by replying STOP.</li>
+                                <li><strong>Help:</strong> For assistance, reply HELP or contact us at reservations@gdmiami.com.</li>
+                                <li><strong>Frequency & Rates:</strong> Message frequency may vary. Message & data rates may apply.</li>
+                                <li><strong>Carriers:</strong> Carriers are not liable for delayed or undelivered messages.</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>8. Changes to Terms</h2>
                             <p>GD Lounge & Bar reserves the right to revise these Terms of Service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms of Service.</p>
                         </section>
 

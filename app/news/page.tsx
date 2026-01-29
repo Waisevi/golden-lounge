@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { Calendar, User, ArrowRight, Loader2 } from "lucide-react";
+import { Calendar, User, ArrowRight, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { getAssetUrl } from "@/lib/assets";
 
@@ -20,9 +20,26 @@ type Article = {
     date: string;
 };
 
+const ITEMS_PER_PAGE = 6;
+
 export default function NewsPage() {
     const [articles, setArticles] = useState<Article[]>([]);
     const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const totalPages = Math.ceil(articles.length / ITEMS_PER_PAGE);
+    const paginatedArticles = articles.slice(
+        (currentPage - 1) * ITEMS_PER_PAGE,
+        currentPage * ITEMS_PER_PAGE
+    );
+
+    const handlePageChange = (page: number) => {
+        if (page >= 1 && page <= totalPages) {
+            setCurrentPage(page);
+            // Smooth scroll to top of list
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    };
 
     useEffect(() => {
         async function fetchNews() {
@@ -44,16 +61,16 @@ export default function NewsPage() {
                     image: article.image || "",
                     category: article.category || article.tags?.[0] || "News",
                     author: article.author || "GD Lounge",
-                    date: article.updated_at 
-                        ? new Date(article.updated_at).toLocaleDateString("en-US", { 
-                            year: "numeric", 
-                            month: "long", 
-                            day: "numeric" 
+                    date: article.updated_at
+                        ? new Date(article.updated_at).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric"
                         })
-                        : new Date().toLocaleDateString("en-US", { 
-                            year: "numeric", 
-                            month: "long", 
-                            day: "numeric" 
+                        : new Date().toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric"
                         }),
                 }));
                 setArticles(formattedArticles);
@@ -94,7 +111,7 @@ export default function NewsPage() {
                         </div>
                     ) : (
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-                            {articles.map((article) => (
+                            {paginatedArticles.map((article) => (
                                 <Link
                                     key={article.id}
                                     href={`/news/${article.slug}`}
@@ -141,6 +158,43 @@ export default function NewsPage() {
                                     </div>
                                 </Link>
                             ))}
+                        </div>
+                    )}
+
+                    {/* Pagination Controls */}
+                    {!loading && totalPages > 1 && (
+                        <div className="mt-20 flex justify-center items-center gap-2">
+                            <button
+                                onClick={() => handlePageChange(currentPage - 1)}
+                                disabled={currentPage === 1}
+                                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-foreground hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                aria-label="Previous page"
+                            >
+                                <ChevronLeft className="w-5 h-5" />
+                            </button>
+
+                            {/* Page Numbers */}
+                            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                                <button
+                                    key={page}
+                                    onClick={() => handlePageChange(page)}
+                                    className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all ${currentPage === page
+                                        ? "bg-primary text-black shadow-[0_0_20px_rgba(245,158,11,0.4)]"
+                                        : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                                        }`}
+                                >
+                                    {page}
+                                </button>
+                            ))}
+
+                            <button
+                                onClick={() => handlePageChange(currentPage + 1)}
+                                disabled={currentPage === totalPages}
+                                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-foreground hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                aria-label="Next page"
+                            >
+                                <ChevronRight className="w-5 h-5" />
+                            </button>
                         </div>
                     )}
                 </div>

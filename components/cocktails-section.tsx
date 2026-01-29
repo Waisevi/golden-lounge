@@ -75,14 +75,13 @@ export function CocktailsSection() {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Grid/Scroll Container */}
+        <div className="flex overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:overflow-visible sm:pb-0 sm:mx-0 sm:px-0">
           {cocktails.map((cocktail, index) => {
-            const shiftDown = [3, 4, 5, 7].includes(index); // photos 4, 5, 6, 8
             return (
               <Card
                 key={cocktail.id}
-                className="group overflow-hidden border-border/50 bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
+                className="flex-none w-[85vw] sm:w-auto snap-center group overflow-hidden border-border/50 bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 mr-4 sm:mr-0"
               >
                 {/* Image */}
                 <div className="relative aspect-[3/4] overflow-hidden">

@@ -79,11 +79,12 @@ export function FoodSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        {/* Grid/Scroll Container */}
+        <div className="flex overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:overflow-visible sm:pb-0 sm:mx-0 sm:px-0">
           {foodItems.map((item) => (
             <Card
               key={item.id}
-              className="group bg-card border-border/40 overflow-hidden hover:border-primary/40 transition-all"
+              className="flex-none w-[85vw] sm:w-auto snap-center group bg-card border-border/40 overflow-hidden hover:border-primary/40 transition-all mr-4 sm:mr-0"
             >
               <div className="relative aspect-square overflow-hidden">
                 <Image

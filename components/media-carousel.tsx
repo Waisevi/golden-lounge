@@ -66,7 +66,7 @@ export function MediaCarousel({
                     prevEl: '.custom-swiper-button-prev',
                 }}
                 pagination={{ clickable: true, dynamicBullets: true }}
-                loop={true}
+                loop={false} // Disabled loop to prevent React Ref issues with cloned slides causing video playback failure
                 className="h-full w-full"
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
@@ -78,7 +78,7 @@ export function MediaCarousel({
                             videoRef.current.pause();
                             setIsPlaying(false);
                         } else {
-                            videoRef.current.play();
+                            videoRef.current.play().catch(console.error);
                             setIsPlaying(true);
                         }
                     }
@@ -97,6 +97,8 @@ export function MediaCarousel({
                                         muted={isMuted}
                                         autoPlay
                                         playsInline
+                                        webkit-playsinline="true"
+                                        preload="auto"
                                     >
                                         <source src={resolveUrl(item.src, item.isLocal)} type="video/mp4" />
                                         Your browser does not support the video tag.

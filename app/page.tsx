@@ -26,7 +26,7 @@ export default function Home() {
       <PrivateEventsSection />
 
       {/* Supporting Sections */}
-      <GallerySection />
+      {/* <GallerySection /> */}
 
       {/* Keeping these for additional context/SEO, can be removed if client counts them as clutter, but usually good to keep */}
       <FoodSection />

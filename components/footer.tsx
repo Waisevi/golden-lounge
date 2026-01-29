@@ -12,7 +12,7 @@ const quickLinks = [
   { href: "#about", label: "About" },
   { href: "#food", label: "Food" },
   { href: "#cocktails", label: "Cocktails" },
-  { href: "#gallery", label: "Gallery" },
+  // { href: "#gallery", label: "Gallery" },
   { href: "/news", label: "News" },
   { href: "#vip", label: "VIP" },
   { href: "/contact", label: "Contact" },

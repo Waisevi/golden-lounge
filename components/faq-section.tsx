@@ -10,12 +10,16 @@ import {
 export function FaqSection() {
     const faqs = [
         {
-            question: "Is there a dress code?",
-            answer: "Yes, our dress code is upscale / smart casual. We strictly prohibit beachwear, flip flops, tank tops (for men), and athletic wear. We reserve the right to deny entry.",
+            question: "Where is GD Lounge located?",
+            answer: "We are located at 300 S Biscayne Blvd Suite C-202B, Miami, FL 33131. Access is available via the main building entrance.",
         },
         {
-            question: "Are reservations required?",
-            answer: "Reservations are highly recommended, especially on weekends, but we do welcome walk-ins based on availability.",
+            question: "How can I make a reservation?",
+            answer: "Reservations are highly recommended! You can book directly through our website, email us at reservations@gdmiami.com, or call/text us at +1 (305) 249-1222.",
+        },
+        {
+            question: "Is there a dress code?",
+            answer: "Yes, our dress code is upscale / smart casual. We strictly prohibit beachwear, flip flops, tank tops (for men), and athletic wear. We reserve the right to deny entry.",
         },
         {
             question: "Is there an age requirement?",
@@ -23,7 +27,7 @@ export function FaqSection() {
         },
         {
             question: "Do you offer private events or VIP areas?",
-            answer: "Absolutely. We offer exclusive VIP rooms and full-venue buyouts for private parties. You can book using the 'Become a VIP' or 'Private Party' buttons in our menu.",
+            answer: "Absolutely. We offer exclusive VIP rooms and full-venue buyouts for private parties. You can book using the 'Become a VIP' or 'Private Party' buttons in our menu, or contact us directly.",
         },
         {
             question: "Is there parking available?",

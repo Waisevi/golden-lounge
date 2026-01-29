@@ -86,7 +86,7 @@ export function MediaCarousel({
             >
                 {media.map((item, index) => (
                     <SwiperSlide key={`${item.src}-${index}`} className="h-full w-full">
-                        <div className={`relative w-full h-full ${aspectRatio}`}>
+                        <div className={`relative w-full h-full ${aspectRatio} mobile-fix-height`}>
                             {item.type === "video" ? (
                                 <>
                                     <video
@@ -128,7 +128,7 @@ export function MediaCarousel({
                                     className="object-cover"
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                     priority={index === 0}
-                                    unoptimized={item.isLocal} // Bypass optimization for local files to avoid 400 errors
+                                    unoptimized={true} // Disable optimization globally to fix 400 errors
                                 />
                             )}
 

@@ -78,6 +78,13 @@ export default function TermsPage() {
                             <p>SMS messages may include ticket confirmations, event reminders, reservation updates, private event coordination, and promotional announcements (marketing messages are sent only if separately opted in).</p>
                             <p>Message frequency may vary. Message & data rates may apply. You may opt out at any time by replying STOP or request help by replying HELP.</p>
                             <p>SMS participation is optional and not required to submit a form.</p>
+                            <br />
+                            <p><strong>Carrier Liability Disclaimer</strong><br />Mobile carriers are not liable for delayed or undelivered messages.</p>
+                        </section>
+
+                        <section>
+                            <h2>Age Restriction</h2>
+                            <p>By using this website and opting in to SMS communications, you confirm that you are at least 18 years of age.</p>
                         </section>
 
                         <section>

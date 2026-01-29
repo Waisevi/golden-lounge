@@ -74,17 +74,23 @@ export default function PrivacyPage() {
                         </section>
 
                         <section>
-                            <h2>5. Security of Your Information</h2>
+                            <h2>6. Security of Your Information</h2>
                             <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable.</p>
                         </section>
 
                         <section>
-                            <h2>6. Your Privacy Rights</h2>
+                            <h2>7. Your Privacy Rights</h2>
                             <p>In some regions (like the EEA and UK), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; and (iv) if applicable, to data portability.</p>
                         </section>
 
                         <section>
-                            <h2>7. Contact Us</h2>
+                            <h2>8. Cookies and Tracking Technologies</h2>
+                            <p>GD Lounge may use basic cookies or similar technologies to ensure website functionality and improve user experience.</p>
+                            <p>We do not use cookies to collect sensitive personal data without consent.</p>
+                        </section>
+
+                        <section>
+                            <h2>9. Contact Us</h2>
                             <p>If you have questions or comments about this notice, you may email us at reservations@gdmiami.com or by post to:</p>
                             <p className="text-foreground">
                                 GD Lounge & Bar<br />

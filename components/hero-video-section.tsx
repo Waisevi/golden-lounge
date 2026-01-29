@@ -53,7 +53,7 @@ export function HeroVideoSection() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto rounded-xl bg-primary px-10 py-7 text-lg font-bold shadow-[0_0_30px_rgba(124,58,237,0.5)] hover:bg-primary/90 hover:scale-105 transition-all"
+              className="w-full sm:w-auto rounded-xl bg-primary px-10 py-7 text-lg font-bold shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:bg-primary/90 hover:scale-105 transition-all"
             >
               <a href="https://www.sevenrooms.com/reservations/gdlounge" target="_blank" rel="noopener noreferrer">
                 Reserve a Table
@@ -64,7 +64,7 @@ export function HeroVideoSection() {
               onClick={() => setIsReserveModalOpen(true)}
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto rounded-xl border-white/30 bg-transparent px-10 py-7 text-lg font-bold text-white backdrop-blur-md hover:bg-transparent hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] hover:scale-105 transition-all"
+              className="w-full sm:w-auto rounded-xl border-white/30 bg-transparent px-10 py-7 text-lg font-bold text-white backdrop-blur-md hover:bg-transparent hover:border-primary hover:text-primary hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:scale-105 transition-all"
             >
               Become a VIP
             </Button>

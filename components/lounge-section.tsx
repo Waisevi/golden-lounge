@@ -31,7 +31,7 @@ export function LoungeSection() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Media Column - Left on Desktop */}
                     <div className="order-2 lg:order-1">
-                        <MediaCarousel media={LOUNGE_MEDIA} className="shadow-[0_0_50px_rgba(124,58,237,0.15)]" />
+                        <MediaCarousel media={LOUNGE_MEDIA} className="shadow-[0_0_50px_rgba(245,158,11,0.15)]" />
                     </div>
 
                     {/* Content Column */}

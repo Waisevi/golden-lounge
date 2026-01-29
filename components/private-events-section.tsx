@@ -59,7 +59,7 @@ export function PrivateEventsSection() {
                         <Button
                             onClick={() => setIsModalOpen(true)}
                             size="lg"
-                            className="rounded-full px-8 py-6 text-lg font-semibold bg-primary text-white hover:bg-primary/90 shadow-[0_0_20px_rgba(124,58,237,0.2)] transition-all hover:scale-105"
+                            className="rounded-full px-8 py-6 text-lg font-semibold bg-primary text-black hover:bg-primary/90 shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all hover:scale-105"
                         >
                             Plan Your Event
                         </Button>
@@ -67,7 +67,7 @@ export function PrivateEventsSection() {
 
                     {/* Media Column */}
                     <div>
-                        <MediaCarousel media={EVENTS_MEDIA} className="shadow-[0_0_50px_rgba(124,58,237,0.15)]" />
+                        <MediaCarousel media={EVENTS_MEDIA} className="shadow-[0_0_50px_rgba(245,158,11,0.15)]" />
                     </div>
                 </div>
             </div>

@@ -33,13 +33,13 @@ export function KaraokeExperienceSection() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Media Column */}
                     <div className="order-2 lg:order-1">
-                        <MediaCarousel media={KARAOKE_MEDIA} className="shadow-[0_0_50px_rgba(59,130,246,0.15)]" />
+                        <MediaCarousel media={KARAOKE_MEDIA} className="shadow-[0_0_50px_rgba(245,158,11,0.15)]" />
                     </div>
 
                     {/* Content Column */}
                     <div className="order-1 lg:order-2">
                         <div className="mb-6">
-                            <span className="text-sm font-bold text-blue-400 uppercase tracking-[0.2em]">Unleash</span>
+                            <span className="text-sm font-bold text-primary uppercase tracking-[0.2em]">Unleash</span>
                             <h2 className="mt-2 text-4xl lg:text-5xl font-bold text-foreground font-serif leading-tight">
                                 Karaoke Experience
                             </h2>
@@ -54,7 +54,7 @@ export function KaraokeExperienceSection() {
                         {/* Feature Tags */}
                         <div className="flex flex-wrap gap-3 mb-10">
                             {FEATURES.map((feature) => (
-                                <span key={feature} className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-foreground/80 hover:border-blue-500/50 hover:bg-blue-500/10 transition-colors cursor-default">
+                                <span key={feature} className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-foreground/80 hover:border-primary/50 hover:bg-primary/10 transition-colors cursor-default">
                                     {feature}
                                 </span>
                             ))}
@@ -63,7 +63,7 @@ export function KaraokeExperienceSection() {
                         <Button
                             onClick={() => setIsModalOpen(true)}
                             size="lg"
-                            className="rounded-full px-8 py-6 text-lg font-semibold bg-blue-600 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all hover:scale-105"
+                            className="rounded-full px-8 py-6 text-lg font-semibold bg-primary text-black hover:bg-primary/90 shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all hover:scale-105"
                         >
                             Book Karaoke
                         </Button>

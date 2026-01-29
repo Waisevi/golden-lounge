@@ -32,7 +32,11 @@ export function LoungeSection() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Media Column - Media Top on Mobile (order-1), Left on Desktop (order-1) */}
                     <div className="order-1 lg:order-1">
-                        <MediaCarousel media={LOUNGE_MEDIA} className="shadow-[0_0_50px_rgba(245,158,11,0.15)]" />
+                        <MediaCarousel
+                            media={LOUNGE_MEDIA}
+                            aspectRatio="aspect-square lg:aspect-[4/5]"
+                            className="shadow-[0_0_50px_rgba(245,158,11,0.15)]"
+                        />
                     </div>
 
                     {/* Content Column - Content Bottom on Mobile (order-2), Right on Desktop (order-2) */}

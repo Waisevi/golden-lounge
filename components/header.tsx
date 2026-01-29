@@ -15,6 +15,7 @@ const navLinks = [
   { href: "#cocktails", label: "Cocktails" },
   // { href: "#gallery", label: "Gallery" },
   { href: "/news", label: "News" },
+  { href: "/contact", label: "Contact" },
 ];
 
 import { PrivatePartyModal } from "@/components/private-party-modal";

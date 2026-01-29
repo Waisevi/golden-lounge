@@ -12,8 +12,8 @@ const LOUNGE_MEDIA: MediaItem[] = [
         isLocal: true,
     },
     { type: "image", src: "/lounge1.png", alt: "Lounge Atmosphere", isLocal: true },
-    { type: "image", src: "/images/gallery/cocktail-1.webp", alt: "Signature Cocktails" },
-    { type: "image", src: "/images/gallery/lounge-2.webp", alt: "Lounge Vibes" },
+    { type: "image", src: "/l2.png", alt: "Lounge Vibes 2", isLocal: true },
+    { type: "image", src: "/l3.png", alt: "Lounge Vibes 3", isLocal: true },
 ];
 
 const FEATURES = [

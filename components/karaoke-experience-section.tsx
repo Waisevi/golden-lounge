@@ -35,7 +35,7 @@ export function KaraokeExperienceSection() {
                     <div className="order-1 lg:order-1 h-[500px] lg:h-auto w-full max-w-[300px] lg:max-w-none mx-auto lg:mx-0">
                         <MediaCarousel
                             media={KARAOKE_MEDIA}
-                            aspectRatio="h-full"
+                            aspectRatio="h-full lg:aspect-[4/5]"
                             className="shadow-[0_0_50px_rgba(245,158,11,0.15)] h-full"
                         />
                     </div>

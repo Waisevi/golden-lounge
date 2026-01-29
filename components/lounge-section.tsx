@@ -1,0 +1,75 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { MediaCarousel, MediaItem } from "@/components/media-carousel";
+
+const LOUNGE_MEDIA: MediaItem[] = [
+    {
+        type: "video",
+        src: "/videos/lounge-vibe.mp4", // Placeholder - user might need to upload or we use existing image if video missing
+        poster: "/images/gallery/lounge-1.webp",
+        alt: "Lounge Content"
+    },
+    { type: "image", src: "/images/gallery/cocktail-1.webp", alt: "Signature Cocktails" },
+    { type: "image", src: "/images/gallery/lounge-2.webp", alt: "Lounge Atmosphere" },
+    { type: "image", src: "/images/gallery/hookah.webp", alt: "Premium Hookah" },
+];
+
+const FEATURES = [
+    "World-Class DJs",
+    "Signature Cocktails",
+    "Premium Hookah",
+    "Live Entertainment",
+    "Immersive Light Show",
+    "Late Night Dinner",
+];
+
+export function LoungeSection() {
+    return (
+        <section id="lounge" className="py-24 lg:py-32 bg-background border-b border-white/5">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    {/* Media Column - Left on Desktop */}
+                    <div className="order-2 lg:order-1">
+                        <MediaCarousel media={LOUNGE_MEDIA} className="shadow-[0_0_50px_rgba(124,58,237,0.15)]" />
+                    </div>
+
+                    {/* Content Column */}
+                    <div className="order-1 lg:order-2">
+                        <div className="mb-6">
+                            <span className="text-sm font-bold text-primary uppercase tracking-[0.2em]">The Experience</span>
+                            <h2 className="mt-2 text-4xl lg:text-5xl font-bold text-foreground font-serif leading-tight">
+                                GD Lounge
+                            </h2>
+                        </div>
+
+                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                            An electric fusion of high-energy nightlife and sophisticated relaxation.
+                            Whether you're here for the beats, the bottles, or the ambiance,
+                            GD Lounge delivers an unforgettable sensory experience in the heart of Miami.
+                        </p>
+
+                        {/* Feature Tags */}
+                        <div className="flex flex-wrap gap-3 mb-10">
+                            {FEATURES.map((feature) => (
+                                <span key={feature} className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-foreground/80 hover:border-primary/50 hover:bg-primary/10 transition-colors cursor-default">
+                                    {feature}
+                                </span>
+                            ))}
+                        </div>
+
+                        <Button
+                            asChild
+                            size="lg"
+                            className="rounded-full px-8 py-6 text-lg font-semibold bg-white text-black hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all hover:scale-105"
+                        >
+                            <a href="https://www.sevenrooms.com/reservations/gdlounge" target="_blank" rel="noopener noreferrer">
+                                Reserve a Table
+                            </a>
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}

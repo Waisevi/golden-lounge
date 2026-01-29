@@ -31,7 +31,7 @@ export function LoungeSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Media Column - Media Top on Mobile (order-1), Left on Desktop (order-1) */}
-                    <div className="order-1 lg:order-1 h-[500px] lg:h-auto w-full">
+                    <div className="order-1 lg:order-1 h-[500px] lg:h-auto w-full max-w-[300px] lg:max-w-none mx-auto lg:mx-0">
                         <MediaCarousel
                             media={LOUNGE_MEDIA}
                             aspectRatio="h-full" // Force fill the fixed height container

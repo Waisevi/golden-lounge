@@ -108,7 +108,17 @@ export function Header() {
               </Link>
             ))}
 
-            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
+            <Button
+              variant="outline"
+              className="border-white/20 text-foreground hover:bg-white/10 hover:border-white/40 rounded-full mt-2"
+              onClick={() => {
+                setIsMenuOpen(false);
+                setIsPrivatePartyModalOpen(true);
+              }}
+            >
+              Private Party
+            </Button>
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
               <a
                 href={RESERVE_URL}
                 target="_blank"

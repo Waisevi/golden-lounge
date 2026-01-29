@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ReserveModal } from "@/components/reserve-modal";
 import { PrivatePartyModal } from "@/components/private-party-modal";
+import { Mic } from "lucide-react";
 
 export function HeroVideoSection() {
   const [isReserveModalOpen, setIsReserveModalOpen] = useState(false);
@@ -31,12 +32,27 @@ export function HeroVideoSection() {
       {/* CONTENT */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-[72px] text-center">
         <div className="max-w-4xl space-y-10">
-          {/* Location badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
-            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-xs font-semibold tracking-[0.3em] uppercase text-white">
-              Downtown Miami
-            </span>
+          import {Mic} from "lucide-react";
+
+          // ... inside component ...
+
+          {/* Badges Row */}
+          <div className="flex flex-wrap items-center justify-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-700">
+            {/* Location badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-accent animate-pulse" />
+              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-white">
+                Downtown Miami
+              </span>
+            </div>
+
+            {/* Karaoke badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+              <Mic className="h-3 w-3 text-accent" />
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white">
+                Premium Karaoke
+              </span>
+            </div>
           </div>
 
           {/* Headline */}

@@ -34,7 +34,21 @@ export function CocktailsSection() {
       if (error) {
         console.error("Error fetching cocktails:", error.message);
       } else if (data) {
-        setCocktails(data as any);
+        // Temporary override: Use local cocktail images
+        const localImages = [
+          "/cocktails/cock1.webp",
+          "/cocktails/cock2.webp",
+          "/cocktails/cock3.webp",
+          "/cocktails/cock4.webp",
+          "/cocktails/cock5.webp",
+          "/cocktails/cock6.webp",
+        ];
+
+        const updatedData = data.map((item: any, index: number) => ({
+          ...item,
+          image: localImages[index % localImages.length] // Cycle through local images
+        }));
+        setCocktails(updatedData);
       }
       setLoading(false);
     }
@@ -73,7 +87,7 @@ export function CocktailsSection() {
                 {/* Image */}
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <Image
-                    src={getAssetUrl(cocktail.image)}
+                    src={cocktail.image.startsWith("/") ? cocktail.image : getAssetUrl(cocktail.image)}
                     alt={cocktail.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"

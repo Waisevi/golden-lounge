@@ -48,6 +48,13 @@ export function MediaCarousel({
         }
     };
 
+    // Force play on mount to ensure mobile autoplay
+    React.useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.play().catch(e => console.log("Autoplay blocked:", e));
+        }
+    }, []);
+
     return (
         <div className={`relative group rounded-[2rem] overflow-hidden shadow-2xl bg-black ${className}`}>
             <Swiper

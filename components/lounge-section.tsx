@@ -7,7 +7,7 @@ const LOUNGE_MEDIA: MediaItem[] = [
     {
         type: "video",
         src: "/lounge-video-main.mp4",
-        poster: "/lounge1.png", // Using the image as poster as well for smooth loading
+        // poster: "/lounge1.png", // Removed poster as user requested "video immediately"
         alt: "Lounge Content",
         isLocal: true,
     },

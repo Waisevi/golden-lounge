@@ -100,7 +100,7 @@ export function MediaCarousel({
                                         webkit-playsinline="true"
                                         preload="auto"
                                     >
-                                        <source src={resolveUrl(item.src, item.isLocal)} type="video/mp4" />
+                                        <source src={resolveUrl(item.src, item.isLocal)} />
                                         Your browser does not support the video tag.
                                     </video>
                                     {/* Video Controls Overlay */}

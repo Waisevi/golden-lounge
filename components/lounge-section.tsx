@@ -8,9 +8,10 @@ const LOUNGE_MEDIA: MediaItem[] = [
         type: "video",
         src: "/lounge-video-main.mp4",
         poster: "/lounge1.png", // Using the image as poster as well for smooth loading
-        alt: "Lounge Content"
+        alt: "Lounge Content",
+        isLocal: true,
     },
-    { type: "image", src: "/lounge1.png", alt: "Lounge Atmosphere" },
+    { type: "image", src: "/lounge1.png", alt: "Lounge Atmosphere", isLocal: true },
     { type: "image", src: "/images/gallery/cocktail-1.webp", alt: "Signature Cocktails" },
     { type: "image", src: "/images/gallery/lounge-2.webp", alt: "Lounge Vibes" },
 ];

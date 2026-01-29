@@ -5,6 +5,9 @@ import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { getAssetUrl } from "@/lib/assets";
 import { supabase } from "@/lib/supabase";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 type MenuItem = {
   id: string;
@@ -79,12 +82,12 @@ export function FoodSection() {
           </h2>
         </div>
 
-        {/* Grid/Scroll Container */}
-        <div className="flex overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:overflow-visible sm:pb-0 sm:mx-0 sm:px-0">
+        {/* Desktop Grid (Hidden on Mobile) */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
           {foodItems.map((item) => (
             <Card
               key={item.id}
-              className="flex-none w-[85vw] sm:w-auto snap-center group bg-card border-border/40 overflow-hidden hover:border-primary/40 transition-all mr-4 sm:mr-0"
+              className="group bg-card border-border/40 overflow-hidden hover:border-primary/40 transition-all"
             >
               <div className="relative aspect-square overflow-hidden">
                 <Image
@@ -102,6 +105,41 @@ export function FoodSection() {
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* Mobile Infinite Swiper (Hidden on Desktop) */}
+        <div className="sm:hidden -mx-4">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={16}
+            slidesPerView={1.2}
+            centeredSlides={true}
+            loop={true}
+            className="px-4 pb-8"
+          >
+            {foodItems.map((item) => (
+              <SwiperSlide key={item.id} className="h-auto">
+                <Card
+                  className="h-full bg-card border-border/40 overflow-hidden"
+                >
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image
+                      src={item.image.startsWith("/") ? item.image : getAssetUrl(item.image)}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div className="p-3 text-center">
+                    <h3 className="text-sm font-medium text-foreground">
+                      {item.name}
+                    </h3>
+                  </div>
+                </Card>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

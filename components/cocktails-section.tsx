@@ -5,6 +5,9 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { getAssetUrl } from "@/lib/assets";
 import { supabase } from "@/lib/supabase";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 type Cocktail = {
   id: string;
@@ -75,38 +78,77 @@ export function CocktailsSection() {
           </p>
         </div>
 
-        {/* Grid/Scroll Container */}
-        <div className="flex overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:overflow-visible sm:pb-0 sm:mx-0 sm:px-0">
-          {cocktails.map((cocktail, index) => {
-            return (
-              <Card
-                key={cocktail.id}
-                className="flex-none w-[85vw] sm:w-auto snap-center group overflow-hidden border-border/50 bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 mr-4 sm:mr-0"
-              >
-                {/* Image */}
-                <div className="relative aspect-[3/4] overflow-hidden">
-                  <Image
-                    src={cocktail.image.startsWith("/") ? cocktail.image : getAssetUrl(cocktail.image)}
-                    alt={cocktail.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-                </div>
+        {/* Desktop Grid (Hidden on Mobile) */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
+          {cocktails.map((cocktail) => (
+            <Card
+              key={cocktail.id}
+              className="group overflow-hidden border-border/50 bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
+            >
+              {/* Image */}
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src={cocktail.image.startsWith("/") ? cocktail.image : getAssetUrl(cocktail.image)}
+                  alt={cocktail.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+              </div>
 
-                {/* Content */}
-                <CardContent className="p-5 transition-colors group-hover:bg-primary/5">
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {cocktail.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {cocktail.description}
-                  </p>
-                </CardContent>
-              </Card>
-            );
-          })}
+              {/* Content */}
+              <CardContent className="p-5 transition-colors group-hover:bg-primary/5">
+                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {cocktail.name}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {cocktail.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Mobile Infinite Swiper (Hidden on Desktop) */}
+        <div className="sm:hidden -mx-4">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={16}
+            slidesPerView={1.2}
+            centeredSlides={true}
+            loop={true}
+            className="px-4 pb-8"
+          >
+            {cocktails.map((cocktail) => (
+              <SwiperSlide key={cocktail.id} className="h-auto">
+                <Card
+                  className="h-full overflow-hidden border-border/50 bg-card"
+                >
+                  {/* Image */}
+                  <div className="relative aspect-[3/4] overflow-hidden">
+                    <Image
+                      src={cocktail.image.startsWith("/") ? cocktail.image : getAssetUrl(cocktail.image)}
+                      alt={cocktail.name}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-60" />
+                  </div>
+
+                  {/* Content */}
+                  <CardContent className="p-5">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      {cocktail.name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {cocktail.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

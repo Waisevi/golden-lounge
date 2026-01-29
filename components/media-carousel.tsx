@@ -141,18 +141,31 @@ export function MediaCarousel({
                         </div>
                     </SwiperSlide>
                 ))}
+            </Swiper>
 
-                {/* Navigation Arrows */}
-                {media.length > 1 && (
-                    <>
-                        <div className="custom-swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
-                            <ChevronLeft className="w-5 h-5" />
-                        </div>
-                        <div className="custom-swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
-                            <ChevronRight className="w-5 h-5" />
-                        </div>
-                    </>
-                )}
+            {/* Navigation Arrows */}
+            {media.length > 1 && (
+                <>
+                    <div className="custom-swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
+                        <ChevronLeft className="w-5 h-5" />
+                    </div>
+                    <div className="custom-swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
+                        <ChevronRight className="w-5 h-5" />
+                    </div>
+                </>
+            )}
+
+            {/* Navigation Arrows */}
+            {media.length > 1 && (
+                <>
+                    <div className="custom-swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
+                        <ChevronLeft className="w-5 h-5" />
+                    </div>
+                    <div className="custom-swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
+                        <ChevronRight className="w-5 h-5" />
+                    </div>
+                </>
+            )}
         </div>
     );
 }

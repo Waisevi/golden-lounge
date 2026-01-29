@@ -107,15 +107,6 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <button
-              className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-2 text-left"
-              onClick={() => {
-                setIsMenuOpen(false);
-                setIsPrivatePartyModalOpen(true);
-              }}
-            >
-              Private Party
-            </button>
 
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
               <a

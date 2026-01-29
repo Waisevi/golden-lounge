@@ -1,17 +1,20 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { Header } from "@/components/header";
 import { HeroVideoSection } from "@/components/hero-video-section";
-import { LoungeSection } from "@/components/lounge-section";
-import { VipSection } from "@/components/vip-section";
-import { KaraokeExperienceSection } from "@/components/karaoke-experience-section";
-import { PrivateEventsSection } from "@/components/private-events-section";
-import { GallerySection } from "@/components/gallery-section";
-import { FoodSection } from "@/components/food-section";
-import { CocktailsSection } from "@/components/cocktails-section";
-import { FaqSection } from "@/components/faq-section";
-import { LocationSection } from "@/components/location-section";
 import { Footer } from "@/components/footer";
+
+// Dynamic Imports for performance (Lazy loading below-the-fold content)
+const LoungeSection = dynamic(() => import("@/components/lounge-section").then(mod => mod.LoungeSection));
+const VipSection = dynamic(() => import("@/components/vip-section").then(mod => mod.VipSection));
+const KaraokeExperienceSection = dynamic(() => import("@/components/karaoke-experience-section").then(mod => mod.KaraokeExperienceSection));
+const PrivateEventsSection = dynamic(() => import("@/components/private-events-section").then(mod => mod.PrivateEventsSection));
+// const GallerySection = dynamic(() => import("@/components/gallery-section").then(mod => mod.GallerySection)); // Comments preserved
+const FoodSection = dynamic(() => import("@/components/food-section").then(mod => mod.FoodSection));
+const CocktailsSection = dynamic(() => import("@/components/cocktails-section").then(mod => mod.CocktailsSection));
+const FaqSection = dynamic(() => import("@/components/faq-section").then(mod => mod.FaqSection));
+const LocationSection = dynamic(() => import("@/components/location-section").then(mod => mod.LocationSection));
 
 export default function Home() {
   return (

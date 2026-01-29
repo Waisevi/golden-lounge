@@ -39,22 +39,22 @@ export function LoungeSection() {
                     </div>
 
                     {/* Content Column - Content Bottom on Mobile (order-2), Right on Desktop (order-2) */}
-                    <div className="order-2 lg:order-2">
-                        <div className="mb-6">
+                    <div className="order-2 lg:order-2 flex flex-col items-end lg:items-start">
+                        <div className="mb-6 text-right lg:text-left">
                             <span className="text-sm font-bold text-primary uppercase tracking-[0.2em]">The Experience</span>
                             <h2 className="mt-2 text-4xl lg:text-5xl font-bold text-foreground font-serif leading-tight">
                                 GD Lounge
                             </h2>
                         </div>
 
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                        <p className="text-lg text-muted-foreground leading-relaxed mb-8 text-right lg:text-left">
                             An electric fusion of high-energy nightlife and sophisticated relaxation.
                             Whether you're here for the beats, the bottles, or the ambiance,
                             GD Lounge delivers an unforgettable sensory experience in the heart of Miami.
                         </p>
 
                         {/* Feature Tags */}
-                        <div className="flex flex-wrap gap-3 mb-10">
+                        <div className="flex flex-wrap gap-3 mb-10 justify-end lg:justify-start">
                             {FEATURES.map((feature) => (
                                 <span key={feature} className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-foreground/80 hover:border-primary/50 hover:bg-primary/10 transition-colors cursor-default">
                                     {feature}
@@ -65,7 +65,7 @@ export function LoungeSection() {
                         <Button
                             asChild
                             size="lg"
-                            className="rounded-full px-8 py-6 text-lg font-semibold bg-primary text-black hover:bg-primary/90 shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all hover:scale-105"
+                            className="rounded-full px-8 py-6 text-lg font-semibold bg-primary text-black hover:bg-primary/90 shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all hover:scale-105 w-full sm:w-auto"
                         >
                             <a href="https://www.sevenrooms.com/reservations/gdlounge" target="_blank" rel="noopener noreferrer">
                                 Reserve a Table

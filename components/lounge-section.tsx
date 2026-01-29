@@ -34,7 +34,7 @@ export function LoungeSection() {
                     <div className="order-1 lg:order-1">
                         <MediaCarousel
                             media={LOUNGE_MEDIA}
-                            aspectRatio="aspect-square lg:aspect-[4/5]"
+                            aspectRatio="aspect-video lg:aspect-[4/5]"
                             className="shadow-[0_0_50px_rgba(245,158,11,0.15)]"
                         />
                     </div>

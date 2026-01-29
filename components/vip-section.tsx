@@ -29,22 +29,22 @@ export function VipSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Content Column - Bottom on Mobile (order-2), Left on Desktop */}
-          <div className="order-2 lg:order-1">
-            <div className="mb-6">
+          <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start">
+            <div className="mb-6 text-center lg:text-left">
               <span className="text-sm font-bold text-accent uppercase tracking-[0.2em]">Exclusivity</span>
               <h2 className="mt-2 text-4xl lg:text-5xl font-bold text-foreground font-serif leading-tight">
                 VIP Rooms & Karaoke
               </h2>
             </div>
 
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8 text-center lg:text-left">
               Escape the crowd without leaving the party. Our VIP rooms offer an intimate setting
               with state-of-the-art karaoke systems, premium bottle service, and privacy for
               you and your guests. Perfect for when you want to own the night.
             </p>
 
             {/* Feature Tags */}
-            <div className="flex flex-wrap gap-3 mb-10">
+            <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
               {FEATURES.map((feature) => (
                 <span key={feature} className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-foreground/80 hover:border-accent/50 hover:bg-accent/10 transition-colors cursor-default">
                   {feature}

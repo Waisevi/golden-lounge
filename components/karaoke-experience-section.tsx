@@ -36,22 +36,22 @@ export function KaraokeExperienceSection() {
                     </div>
 
                     {/* Content Column */}
-                    <div className="order-2 lg:order-2">
-                        <div className="mb-6">
+                    <div className="order-2 lg:order-2 flex flex-col items-center lg:items-start">
+                        <div className="mb-6 text-center lg:text-left">
                             <span className="text-sm font-bold text-primary uppercase tracking-[0.2em]">Unleash</span>
                             <h2 className="mt-2 text-4xl lg:text-5xl font-bold text-foreground font-serif leading-tight">
                                 Karaoke Experience
                             </h2>
                         </div>
 
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                        <p className="text-lg text-muted-foreground leading-relaxed mb-8 text-center lg:text-left">
                             Not just a room, but a full sensory experience.
                             Sing your heart out with crystal clear audio, fueled by premium bottle service
                             and the best hookahs in Miami. It's your concert, your crowd, your night.
                         </p>
 
                         {/* Feature Tags */}
-                        <div className="flex flex-wrap gap-3 mb-10">
+                        <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                             {FEATURES.map((feature) => (
                                 <span key={feature} className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-foreground/80 hover:border-primary/50 hover:bg-primary/10 transition-colors cursor-default">
                                     {feature}

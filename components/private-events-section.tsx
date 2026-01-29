@@ -29,22 +29,22 @@ export function PrivateEventsSection() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                     {/* Content Column - Bottom on Mobile (order-2), Left on Desktop (default/order-1) */}
-                    <div className="order-2 lg:order-1">
-                        <div className="mb-6">
+                    <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start">
+                        <div className="mb-6 text-center lg:text-left">
                             <span className="text-sm font-bold text-primary uppercase tracking-[0.2em]">Celebrate</span>
                             <h2 className="mt-2 text-4xl lg:text-5xl font-bold text-foreground font-serif leading-tight">
                                 Private Events
                             </h2>
                         </div>
 
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                        <p className="text-lg text-muted-foreground leading-relaxed mb-8 text-center lg:text-left">
                             Make your milestone moment legendary. From intimate birthday gatherings to
                             grand corporate celebrations, our team curates every detail—from the menu
                             to the music—ensuring your event is flawless.
                         </p>
 
                         {/* Feature Tags */}
-                        <div className="flex flex-wrap gap-3 mb-10">
+                        <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                             {FEATURES.map((feature) => (
                                 <span key={feature} className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-foreground/80 hover:border-primary/50 hover:bg-primary/10 transition-colors cursor-default">
                                     {feature}

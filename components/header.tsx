@@ -71,13 +71,6 @@ export function Header() {
                 Reserve
               </a>
             </Button>
-            <Button
-              variant="outline"
-              className="border-primary/50 text-primary hover:bg-primary/20 hover:border-primary hover:text-primary rounded-full px-5"
-              onClick={() => setIsVipModalOpen(true)}
-            >
-              Become a VIP
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -126,16 +119,6 @@ export function Header() {
               >
                 Reserve
               </a>
-            </Button>
-            <Button
-              variant="outline"
-              className="border-primary/50 text-primary hover:bg-primary/20 hover:border-primary rounded-full"
-              onClick={() => {
-                setIsMenuOpen(false);
-                setIsVipModalOpen(true);
-              }}
-            >
-              Become a VIP
             </Button>
           </nav>
         </div>

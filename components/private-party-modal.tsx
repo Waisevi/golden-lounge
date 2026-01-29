@@ -46,10 +46,7 @@ export function PrivatePartyModal({ isOpen, onOpenChange }: PrivatePartyModalPro
         setError(null);
         if (honeypot) return;
 
-        if (!agreeNonMarketing) {
-            setError("Please consent to receive non-marketing text messages.");
-            return;
-        }
+
 
         setIsLoading(true);
 
@@ -153,20 +150,24 @@ ${message}
                             {/* Consent Checkboxes */}
                             <div className="space-y-3 pt-1">
                                 <div className="flex items-start gap-2.5 text-left">
-                                    <Checkbox id="pp-agreeNonMarketing" checked={agreeNonMarketing} onCheckedChange={(c) => setAgreeNonMarketing(!!c)} className="mt-0.5 border-primary/40 data-[state=checked]:bg-primary" required />
+                                    <Checkbox id="pp-agreeNonMarketing" checked={agreeNonMarketing} onCheckedChange={(c) => setAgreeNonMarketing(!!c)} className="mt-0.5 border-primary/40 data-[state=checked]:bg-primary" />
                                     <label htmlFor="pp-agreeNonMarketing" className="text-xs text-muted-foreground cursor-pointer">
-                                        I consent to receive non-marketing text messages from GD Lounge. Msg freq varies. Msg & data rates may apply.
+                                        I consent to receive non-marketing SMS messages from GD Lounge related to my private event inquiry, booking coordination, reservation details, schedule updates, and important venue notifications. Message frequency may vary. Message & data rates may apply. Reply HELP for assistance. Reply STOP to opt out.
                                     </label>
                                 </div>
                                 <div className="flex items-start gap-2.5 text-left">
                                     <Checkbox id="pp-agreeMarketing" checked={agreeMarketing} onCheckedChange={(c) => setAgreeMarketing(!!c)} className="mt-0.5 border-primary/40 data-[state=checked]:bg-primary" />
                                     <label htmlFor="pp-agreeMarketing" className="text-xs text-muted-foreground cursor-pointer">
-                                        I consent to receive marketing text messages from GD Lounge. Msg freq varies. Msg & data rates may apply.
+                                        I consent to receive marketing SMS messages from GD Lounge, including event announcements and special offers. Message frequency may vary. Message & data rates may apply. Reply HELP for assistance. Reply STOP to opt out.
                                     </label>
                                 </div>
                             </div>
 
                             {error && <div className="flex items-center gap-2 text-xs text-red-500 font-medium pt-1"><AlertTriangle className="w-3.5 h-3.5" />{error}</div>}
+
+                            <p className="text-[10px] text-muted-foreground leading-tight text-center pt-2">
+                                SMS messages are sent only if you choose to opt in by checking a box above. Message frequency may vary. Message & data rates may apply. Reply STOP to opt out or HELP for help.
+                            </p>
 
                             <Button type="submit" disabled={isLoading} className="w-full font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300">
                                 {isLoading ? "Sending..." : "Request Booking"}

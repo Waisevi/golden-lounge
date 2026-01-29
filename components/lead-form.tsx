@@ -87,10 +87,9 @@ export function LeadForm({
             return;
         }
 
-        if (!agreeNonMarketing) {
-            setError("Please consent to receive non-marketing text messages.");
-            return;
-        }
+
+
+        // Removing the agreeNonMarketing validation block completely
 
         setIsLoading(true);
 
@@ -230,7 +229,6 @@ export function LeadForm({
                                 checked={agreeNonMarketing}
                                 onCheckedChange={(checked) => setAgreeNonMarketing(checked as boolean)}
                                 className="mt-0.5 border-primary/40 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-                                required
                             />
                             <label
                                 htmlFor="agreeNonMarketing"

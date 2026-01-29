@@ -47,7 +47,7 @@ export function CocktailsSection() {
         const updatedData = data.map((item: any, index: number) => ({
           ...item,
           image: localImages[index % localImages.length] // Cycle through local images
-        }));
+        })).slice(0, 6);
         setCocktails(updatedData);
       }
       setLoading(false);

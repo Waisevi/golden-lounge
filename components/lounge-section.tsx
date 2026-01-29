@@ -6,13 +6,13 @@ import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 const LOUNGE_MEDIA: MediaItem[] = [
     {
         type: "video",
-        src: "/videos/lounge-vibe.mp4", // Placeholder - user might need to upload or we use existing image if video missing
-        poster: "/images/gallery/lounge-1.webp",
+        src: "/lounge-video-main.mp4",
+        poster: "/lounge1.png", // Using the image as poster as well for smooth loading
         alt: "Lounge Content"
     },
+    { type: "image", src: "/lounge1.png", alt: "Lounge Atmosphere" },
     { type: "image", src: "/images/gallery/cocktail-1.webp", alt: "Signature Cocktails" },
-    { type: "image", src: "/images/gallery/lounge-2.webp", alt: "Lounge Atmosphere" },
-    { type: "image", src: "/images/gallery/hookah.webp", alt: "Premium Hookah" },
+    { type: "image", src: "/images/gallery/lounge-2.webp", alt: "Lounge Vibes" },
 ];
 
 const FEATURES = [
@@ -61,7 +61,7 @@ export function LoungeSection() {
                         <Button
                             asChild
                             size="lg"
-                            className="rounded-full px-8 py-6 text-lg font-semibold bg-white text-black hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all hover:scale-105"
+                            className="rounded-full px-8 py-6 text-lg font-semibold bg-primary text-black hover:bg-primary/90 shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all hover:scale-105"
                         >
                             <a href="https://www.sevenrooms.com/reservations/gdlounge" target="_blank" rel="noopener noreferrer">
                                 Reserve a Table

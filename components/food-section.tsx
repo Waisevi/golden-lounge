@@ -43,7 +43,24 @@ export function FoodSection() {
           }
           return item;
         });
-        setFoodItems(updatedData);
+
+        // Filter and sort to match specific user list
+        const targetItems = [
+          "Sashimi Platter",
+          "Nigiri Selection",
+          "Alaskan King Crab California",
+          "Black Cod Gyoza",
+          "Whole Peking Duck",
+          "Ice Cream"
+        ];
+
+        const finalData = targetItems.map(target => {
+          return updatedData.find((item: any) =>
+            item.name.toLowerCase().includes(target.toLowerCase())
+          );
+        }).filter(Boolean); // Remove any undefined matches
+
+        setFoodItems(finalData);
       }
       setLoading(false);
     }

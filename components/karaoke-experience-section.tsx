@@ -5,14 +5,13 @@ import { Button } from "@/components/ui/button";
 import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 import { PrivatePartyModal } from "@/components/private-party-modal";
 
-const KARAOKE_MEDIA: MediaItem[] = [
-    { type: "image", src: "/kar1.webp", alt: "Karaoke Fun 1", isLocal: true },
-    { type: "image", src: "/kar2.webp", alt: "Karaoke Fun 2", isLocal: true },
-    { type: "image", src: "/kar3.webp", alt: "Karaoke Fun 3", isLocal: true },
-    // Empty Karaoke Rooms
-    { type: "image", src: "/karaoke-empty-1.webp", alt: "Karaoke Room Empty 1", isLocal: true },
-    { type: "image", src: "/karaoke-empty-2.webp", alt: "Karaoke Room Empty 2", isLocal: true },
-    { type: "image", src: "/karaoke-empty-3.webp", alt: "Karaoke Room Empty 3", isLocal: true },
+{ type: "image", src: "/kar2.webp", alt: "Karaoke Fun 2", isLocal: true },
+{ type: "image", src: "/kar3.webp", alt: "Karaoke Fun 3", isLocal: true },
+{ type: "image", src: "/kar1.webp", alt: "Karaoke Fun 1", isLocal: true }, // Moving potentially empty room photo after people
+// Empty Karaoke Rooms
+{ type: "image", src: "/karaoke-empty-1.webp", alt: "Karaoke Room Empty 1", isLocal: true },
+{ type: "image", src: "/karaoke-empty-2.webp", alt: "Karaoke Room Empty 2", isLocal: true },
+{ type: "image", src: "/karaoke-empty-3.webp", alt: "Karaoke Room Empty 3", isLocal: true },
 ];
 
 const FEATURES = [

@@ -26,7 +26,7 @@ const FEATURES = [
 
 export function LoungeSection() {
     return (
-        <section id="lounge" className="py-24 lg:py-32 bg-background border-b border-white/5">
+        <section id="about" className="py-24 lg:py-32 bg-background border-b border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Media Column - Media Top on Mobile (order-1), Left on Desktop (order-1) */}

@@ -3,9 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { ReserveModal } from "@/components/reserve-modal";
+import { PrivatePartyModal } from "@/components/private-party-modal";
 
 const RESERVE_URL = "https://www.sevenrooms.com/reservations/gdlounge";
 
@@ -18,12 +20,18 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-import { PrivatePartyModal } from "@/components/private-party-modal";
-
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVipModalOpen, setIsVipModalOpen] = useState(false);
   const [isPrivatePartyModalOpen, setIsPrivatePartyModalOpen] = useState(false);
+  const pathname = usePathname();
+
+  const getHref = (href: string) => {
+    if (href.startsWith("#") && pathname !== "/") {
+      return `/${href}`;
+    }
+    return href;
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -46,7 +54,7 @@ export function Header() {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={getHref(link.href)}
                 className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 relative group/nav"
               >
                 {link.label}
@@ -93,7 +101,7 @@ export function Header() {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={getHref(link.href)}
                 className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >

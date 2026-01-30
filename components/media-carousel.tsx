@@ -76,6 +76,7 @@ export function MediaCarousel({
     return (
         <div className={`relative group rounded-[2rem] overflow-hidden shadow-2xl bg-black ${className}`}>
             <Swiper
+                // Force re-render if strict/loop mode changes
                 key={loop ? "loop-mode" : "strict-mode"}
                 modules={[Navigation, Pagination]}
                 spaceBetween={0}
@@ -87,13 +88,13 @@ export function MediaCarousel({
                 pagination={{ clickable: true, dynamicBullets: true }}
                 loop={loop}
                 initialSlide={0}
-                observer={true}
-                observeParents={true}
                 className="h-full w-full"
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
                     // Force start at 0
-                    swiper.slideTo(0, 0, false);
+                    if (!loop) {
+                        swiper.slideTo(0, 0, false);
+                    }
                     // Initial check for video on mount
                     setTimeout(() => {
                         handleSlideChange(swiper);

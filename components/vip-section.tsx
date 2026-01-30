@@ -6,13 +6,13 @@ import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 import { PrivatePartyModal } from "@/components/private-party-modal"; // Or specific VIP modal if differentiation needed
 
 const VIP_MEDIA: MediaItem[] = [
-  { type: "image", src: "/VIProoms/1.webp", alt: "VIP 1", isLocal: true },
-  { type: "image", src: "/VIProoms/2.webp", alt: "VIP 2", isLocal: true },
-  { type: "image", src: "/VIProoms/3.webp", alt: "VIP 3", isLocal: true },
-  { type: "image", src: "/VIProoms/4.webp", alt: "VIP 4", isLocal: true },
-  { type: "image", src: "/VIProoms/5.webp", alt: "VIP 5", isLocal: true },
-  { type: "image", src: "/VIProoms/6.webp", alt: "VIP 6", isLocal: true },
-  { type: "image", src: "/VIProoms/7.webp", alt: "VIP 7", isLocal: true },
+  { type: "image", src: "/VIProoms/1.webp?v=final", alt: "VIP 1", isLocal: true },
+  { type: "image", src: "/VIProoms/2.webp?v=final", alt: "VIP 2", isLocal: true },
+  { type: "image", src: "/VIProoms/3.webp?v=final", alt: "VIP 3", isLocal: true },
+  { type: "image", src: "/VIProoms/4.webp?v=final", alt: "VIP 4", isLocal: true },
+  { type: "image", src: "/VIProoms/5.webp?v=final", alt: "VIP 5", isLocal: true },
+  { type: "image", src: "/VIProoms/6.webp?v=final", alt: "VIP 6", isLocal: true },
+  { type: "image", src: "/VIProoms/7.webp?v=final", alt: "VIP 7", isLocal: true },
 ];
 
 const FEATURES = [

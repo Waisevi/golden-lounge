@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button";
 import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 
 const LOUNGE_MEDIA: MediaItem[] = [
-    { type: "video", src: "/lounge/1.mp4", alt: "Lounge Video", isLocal: true },
-    { type: "image", src: "/lounge/2.webp", alt: "Lounge 2", isLocal: true },
-    { type: "image", src: "/lounge/3.webp", alt: "Lounge 3", isLocal: true },
-    { type: "image", src: "/lounge/4.webp", alt: "Lounge 4", isLocal: true },
-    { type: "image", src: "/lounge/5.webp", alt: "Lounge 5", isLocal: true },
-    { type: "image", src: "/lounge/6.webp", alt: "Lounge 6", isLocal: true },
-    { type: "image", src: "/lounge/7.webp", alt: "Lounge 7", isLocal: true },
+    { type: "video", src: "/lounge/1.mp4?v=final", alt: "Lounge Video", isLocal: true },
+    { type: "image", src: "/lounge/2.webp?v=final", alt: "Lounge 2", isLocal: true },
+    { type: "image", src: "/lounge/3.webp?v=final", alt: "Lounge 3", isLocal: true },
+    { type: "image", src: "/lounge/4.webp?v=final", alt: "Lounge 4", isLocal: true },
+    { type: "image", src: "/lounge/5.webp?v=final", alt: "Lounge 5", isLocal: true },
+    { type: "image", src: "/lounge/6.webp?v=final", alt: "Lounge 6", isLocal: true },
+    { type: "image", src: "/lounge/7.webp?v=final", alt: "Lounge 7", isLocal: true },
 ];
 
 const FEATURES = [

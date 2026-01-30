@@ -89,10 +89,6 @@ export function LocationSection() {
                       Hours
                     </h3>
                     <ul className="text-muted-foreground text-sm space-y-1">
-                      <li>Monday: 9:00 PM – 1:00 AM</li>
-                      <li>Tuesday: Closed</li>
-                      <li>Wednesday: Closed</li>
-                      <li>Thursday: Closed</li>
                       <li>Friday & Saturday: 9:00 PM – 3:00 AM</li>
                       <li>Private Events: Available 24/7</li>
                     </ul>

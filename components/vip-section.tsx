@@ -6,17 +6,13 @@ import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 import { PrivatePartyModal } from "@/components/private-party-modal"; // Or specific VIP modal if differentiation needed
 
 const VIP_MEDIA: MediaItem[] = [
-  { type: "image", src: "/vip1.webp", alt: "VIP Experience 1", isLocal: true },
-  { type: "image", src: "/vip2.webp", alt: "VIP Experience 2", isLocal: true },
-  { type: "image", src: "/vip3.webp", alt: "VIP Experience 3", isLocal: true },
-  { type: "image", src: "/vip4.webp", alt: "VIP Experience 4", isLocal: true },
-  // Empty Rooms
-  { type: "image", src: "/vip-empty-1.webp", alt: "VIP Room Empty 1", isLocal: true },
-  { type: "image", src: "/vip-empty-2.webp", alt: "VIP Room Empty 2", isLocal: true },
-  { type: "image", src: "/vip-empty-3.webp", alt: "VIP Zone Empty", isLocal: true },
-  { type: "image", src: "/karaoke-empty-1.webp", alt: "Karaoke Room Empty 1", isLocal: true },
-  { type: "image", src: "/karaoke-empty-2.webp", alt: "Karaoke Room Empty 2", isLocal: true },
-  { type: "image", src: "/karaoke-empty-3.webp", alt: "Karaoke Room Empty 3", isLocal: true },
+  { type: "image", src: "/VIProoms/1.webp", alt: "VIP 1", isLocal: true },
+  { type: "image", src: "/VIProoms/2.webp", alt: "VIP 2", isLocal: true },
+  { type: "image", src: "/VIProoms/3.webp", alt: "VIP 3", isLocal: true },
+  { type: "image", src: "/VIProoms/4.webp", alt: "VIP 4", isLocal: true },
+  { type: "image", src: "/VIProoms/5.webp", alt: "VIP 5", isLocal: true },
+  { type: "image", src: "/VIProoms/6.webp", alt: "VIP 6", isLocal: true },
+  { type: "image", src: "/VIProoms/7.webp", alt: "VIP 7", isLocal: true },
 ];
 
 const FEATURES = [
@@ -74,6 +70,7 @@ export function VipSection() {
               media={VIP_MEDIA}
               aspectRatio="h-full lg:aspect-[4/5]"
               className="shadow-[0_0_50px_rgba(245,158,11,0.15)] h-full"
+              loop={false}
             />
           </div>
         </div>

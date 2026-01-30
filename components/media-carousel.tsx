@@ -34,8 +34,9 @@ export function MediaCarousel({
     media,
     aspectRatio = "aspect-[4/5]",
     className = "",
-    priority = false // New prop, defaults to false for lazy loading
-}: MediaCarouselProps & { priority?: boolean }) {
+    priority = false, // New prop, defaults to false for lazy loading
+    loop = true // New prop, defaults to true
+}: MediaCarouselProps & { priority?: boolean; loop?: boolean }) {
     const swiperRef = useRef<SwiperType | null>(null);
     const [isMuted, setIsMuted] = useState(true);
 
@@ -83,7 +84,7 @@ export function MediaCarousel({
                     prevEl: '.custom-swiper-button-prev',
                 }}
                 pagination={{ clickable: true, dynamicBullets: true }}
-                loop={true}
+                loop={loop}
                 className="h-full w-full"
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;

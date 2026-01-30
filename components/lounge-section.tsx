@@ -4,15 +4,18 @@ import { Button } from "@/components/ui/button";
 import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 
 const LOUNGE_MEDIA: MediaItem[] = [
-    {
-        type: "video",
-        src: "/lounge-video-comp.mp4",
-        alt: "Lounge Content",
-        isLocal: true,
-    },
-    { type: "image", src: "/lounge1.webp", alt: "Lounge Atmosphere 1", isLocal: true },
-    { type: "image", src: "/lounge2.webp", alt: "Lounge Atmosphere 2", isLocal: true },
-    { type: "image", src: "/lounge3.webp", alt: "Lounge Atmosphere 3", isLocal: true },
+    { type: "video", src: "/lounge/1.mp4", alt: "Lounge Video", isLocal: true },
+    { type: "image", src: "/lounge/2.webp", alt: "Lounge 2", isLocal: true },
+    { type: "image", src: "/lounge/3.webp", alt: "Lounge 3", isLocal: true },
+    { type: "image", src: "/lounge/4.webp", alt: "Lounge 4", isLocal: true },
+    { type: "image", src: "/lounge/5.webp", alt: "Lounge 5", isLocal: true },
+    { type: "image", src: "/lounge/6.webp", alt: "Lounge 6", isLocal: true },
+    { type: "image", src: "/lounge/7.webp", alt: "Lounge 7", isLocal: true },
+    { type: "image", src: "/lounge/8.webp", alt: "Lounge 8", isLocal: true },
+    { type: "image", src: "/lounge/9.webp", alt: "Lounge 9", isLocal: true },
+    { type: "image", src: "/lounge/10.webp", alt: "Lounge 10", isLocal: true },
+    { type: "image", src: "/lounge/11.webp", alt: "Lounge 11", isLocal: true },
+    { type: "image", src: "/lounge/12.webp", alt: "Lounge 12", isLocal: true },
 ];
 
 const FEATURES = [
@@ -35,6 +38,7 @@ export function LoungeSection() {
                             media={LOUNGE_MEDIA}
                             aspectRatio="h-full lg:aspect-[4/5]" // Mobile: Fill fixed height. Desktop: Intrinsic 4:5 ratio.
                             className="shadow-[0_0_50px_rgba(245,158,11,0.15)] h-full"
+                            loop={false}
                         />
                     </div>
 

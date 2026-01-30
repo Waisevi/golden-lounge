@@ -85,9 +85,12 @@ export function MediaCarousel({
                 }}
                 pagination={{ clickable: true, dynamicBullets: true }}
                 loop={loop}
+                initialSlide={0}
                 className="h-full w-full"
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
+                    // Reset to 0 if loop is false
+                    if (!loop) swiper.slideTo(0, 0);
                     // Initial check for video on mount
                     setTimeout(() => {
                         handleSlideChange(swiper);

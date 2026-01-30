@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer";
 import LazyLoadSection from "@/components/lazy-load-section";
 
 const LoungeSection = dynamic(() => import("@/components/lounge-section").then(mod => mod.LoungeSection));
+const EventsSection = dynamic(() => import("@/components/events-section").then(mod => mod.EventsSection));
 // ... (rest are same)
 const VipSection = dynamic(() => import("@/components/vip-section").then(mod => mod.VipSection));
 const KaraokeExperienceSection = dynamic(() => import("@/components/karaoke-experience-section").then(mod => mod.KaraokeExperienceSection));
@@ -28,6 +29,10 @@ export default function Home() {
       {/* 4 Main Content Blocks requested by client - Wrapped in Aggressive Lazy Loader */}
       <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]">
         <LoungeSection />
+      </LazyLoadSection>
+
+      <LazyLoadSection className="min-h-[500px] lg:min-h-[600px]">
+        <EventsSection />
       </LazyLoadSection>
 
       <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]">

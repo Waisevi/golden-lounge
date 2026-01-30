@@ -73,6 +73,9 @@ export function MediaCarousel({
         }
     };
 
+    const prevRef = useRef<HTMLButtonElement>(null);
+    const nextRef = useRef<HTMLButtonElement>(null);
+
     return (
         <div className={`relative group rounded-[2rem] overflow-hidden shadow-2xl bg-black ${className}`}>
             <Swiper
@@ -81,9 +84,15 @@ export function MediaCarousel({
                 modules={[Navigation, Pagination]}
                 spaceBetween={0}
                 slidesPerView={1}
+                onBeforeInit={(swiper) => {
+                    // @ts-ignore
+                    swiper.params.navigation.prevEl = prevRef.current;
+                    // @ts-ignore
+                    swiper.params.navigation.nextEl = nextRef.current;
+                }}
                 navigation={{
-                    nextEl: '.custom-swiper-button-next',
-                    prevEl: '.custom-swiper-button-prev',
+                    prevEl: prevRef.current,
+                    nextEl: nextRef.current,
                 }}
                 pagination={{ clickable: true, dynamicBullets: true }}
                 loop={loop}
@@ -98,6 +107,12 @@ export function MediaCarousel({
                     // Initial check for video on mount
                     setTimeout(() => {
                         handleSlideChange(swiper);
+                        // Re-initialize navigation after mount to ensure buttons work
+                        if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
+                            swiper.navigation.destroy();
+                            swiper.navigation.init();
+                            swiper.navigation.update();
+                        }
                     }, 100);
                 }}
                 onSlideChange={handleSlideChange}
@@ -160,6 +175,7 @@ export function MediaCarousel({
             {media.length > 1 && (
                 <>
                     <button
+                        ref={prevRef}
                         type="button"
                         aria-label="Previous slide"
                         className="custom-swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100"
@@ -167,6 +183,7 @@ export function MediaCarousel({
                         <ChevronLeft className="w-5 h-5" />
                     </button>
                     <button
+                        ref={nextRef}
                         type="button"
                         aria-label="Next slide"
                         className="custom-swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100"

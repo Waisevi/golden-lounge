@@ -30,12 +30,11 @@ const resolveUrl = (src: string, isLocal?: boolean) => {
     return isLocal ? src : getAssetUrl(src);
 };
 
-export function MediaCarousel({
-    media,
+media,
     aspectRatio = "aspect-[4/5]",
     className = "",
     priority = false, // New prop, defaults to false for lazy loading
-    loop = true // New prop, defaults to true
+    loop = false // Default to false for strict order
 }: MediaCarouselProps & { priority?: boolean; loop?: boolean }) {
     const swiperRef = useRef<SwiperType | null>(null);
     const [isMuted, setIsMuted] = useState(true);

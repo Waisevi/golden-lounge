@@ -66,6 +66,7 @@ export function PrivateEventsSection() {
                             media={EVENTS_MEDIA}
                             aspectRatio="h-full lg:aspect-[4/5]"
                             className="shadow-[0_0_50px_rgba(245,158,11,0.15)] h-full"
+                            loop={false}
                         />
                     </div>
                 </div>

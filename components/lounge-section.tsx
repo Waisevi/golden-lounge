@@ -11,11 +11,6 @@ const LOUNGE_MEDIA: MediaItem[] = [
     { type: "image", src: "/lounge/5.webp", alt: "Lounge 5", isLocal: true },
     { type: "image", src: "/lounge/6.webp", alt: "Lounge 6", isLocal: true },
     { type: "image", src: "/lounge/7.webp", alt: "Lounge 7", isLocal: true },
-    { type: "image", src: "/lounge/8.webp", alt: "Lounge 8", isLocal: true },
-    { type: "image", src: "/lounge/9.webp", alt: "Lounge 9", isLocal: true },
-    { type: "image", src: "/lounge/10.webp", alt: "Lounge 10", isLocal: true },
-    { type: "image", src: "/lounge/11.webp", alt: "Lounge 11", isLocal: true },
-    { type: "image", src: "/lounge/12.webp", alt: "Lounge 12", isLocal: true },
 ];
 
 const FEATURES = [

@@ -5,10 +5,12 @@ import { Button } from "@/components/ui/button";
 import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 import { PrivatePartyModal } from "@/components/private-party-modal";
 
-{ type: "image", src: "/lounge5.webp", alt: "Private Event 1", isLocal: true },
-{ type: "image", src: "/vip-empty-1.webp", alt: "Private Event 2", isLocal: true },
-{ type: "image", src: "/vip-empty-3.webp", alt: "Private Event 3", isLocal: true },
-{ type: "image", src: "/lounge8.webp", alt: "Private Event 4", isLocal: true },
+const EVENTS_MEDIA: MediaItem[] = [
+    { type: "image", src: "/Private/1.webp", alt: "Private Event 1", isLocal: true },
+    { type: "image", src: "/Private/2.webp", alt: "Private Event 2", isLocal: true },
+    { type: "image", src: "/Private/3.webp", alt: "Private Event 3", isLocal: true },
+    { type: "image", src: "/Private/4.webp", alt: "Private Event 4", isLocal: true },
+    { type: "image", src: "/Private/5.webp", alt: "Private Event 5", isLocal: true },
 ];
 
 const FEATURES = [

@@ -6,12 +6,12 @@ import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 import { PrivatePartyModal } from "@/components/private-party-modal";
 
 const KARAOKE_MEDIA: MediaItem[] = [
-    { type: "image", src: "/karaokexp/1.webp", alt: "Karaoke 1", isLocal: true },
-    { type: "image", src: "/karaokexp/2.webp", alt: "Karaoke 2", isLocal: true },
-    { type: "image", src: "/karaokexp/3.webp", alt: "Karaoke 3", isLocal: true },
-    { type: "image", src: "/karaokexp/4.webp", alt: "Karaoke 4", isLocal: true },
-    { type: "image", src: "/karaokexp/5.webp", alt: "Karaoke 5", isLocal: true },
-    { type: "image", src: "/karaokexp/6.webp", alt: "Karaoke 6", isLocal: true },
+    { type: "image", src: "/karaokexp/1.webp?v=final", alt: "Karaoke 1", isLocal: true },
+    { type: "image", src: "/karaokexp/2.webp?v=final", alt: "Karaoke 2", isLocal: true },
+    { type: "image", src: "/karaokexp/3.webp?v=final", alt: "Karaoke 3", isLocal: true },
+    { type: "image", src: "/karaokexp/4.webp?v=final", alt: "Karaoke 4", isLocal: true },
+    { type: "image", src: "/karaokexp/5.webp?v=final", alt: "Karaoke 5", isLocal: true },
+    { type: "image", src: "/karaokexp/6.webp?v=final", alt: "Karaoke 6", isLocal: true },
 ];
 
 const FEATURES = [

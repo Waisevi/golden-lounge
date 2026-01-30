@@ -30,7 +30,8 @@ const resolveUrl = (src: string, isLocal?: boolean) => {
     return isLocal ? src : getAssetUrl(src);
 };
 
-media,
+export function MediaCarousel({
+    media,
     aspectRatio = "aspect-[4/5]",
     className = "",
     priority = false, // New prop, defaults to false for lazy loading

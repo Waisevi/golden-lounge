@@ -77,7 +77,7 @@ export default function Home() {
                 "@id": "https://golden-lounge-psi.vercel.app/#organization",
                 "name": "GD Lounge",
                 "alternateName": "GD Lounge Miami",
-                "description": "Experience elevated nightlife in the heart of Downtown Miami. Lounge, VIP, Karaoke, and Private Events.",
+                "description": "Experience elevated nightlife in the heart of Downtown Miami. Lounge, VIP, Karaoke. Open Fri-Sat 9PM-3AM. Private Events available 24/7.",
                 "url": "https://golden-lounge-psi.vercel.app",
                 "telephone": "+13052491222",
                 "email": "reservations@gdmiami.com",

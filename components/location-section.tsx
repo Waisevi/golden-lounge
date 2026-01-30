@@ -93,9 +93,8 @@ export function LocationSection() {
                       <li>Tuesday: Closed</li>
                       <li>Wednesday: Closed</li>
                       <li>Thursday: Closed</li>
-                      <li>Friday: 9:00 PM – 2:00 AM</li>
-                      <li>Saturday: Closed</li>
-                      <li>Sunday: Closed</li>
+                      <li>Friday & Saturday: 9:00 PM – 3:00 AM</li>
+                      <li>Private Events: Available 24/7</li>
                     </ul>
                   </div>
                 </div>

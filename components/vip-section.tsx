@@ -10,6 +10,13 @@ const VIP_MEDIA: MediaItem[] = [
   { type: "image", src: "/vip2.webp", alt: "VIP Experience 2", isLocal: true },
   { type: "image", src: "/vip3.webp", alt: "VIP Experience 3", isLocal: true },
   { type: "image", src: "/vip4.webp", alt: "VIP Experience 4", isLocal: true },
+  // Empty Rooms
+  { type: "image", src: "/vip-empty-1.webp", alt: "VIP Room Empty 1", isLocal: true },
+  { type: "image", src: "/vip-empty-2.webp", alt: "VIP Room Empty 2", isLocal: true },
+  { type: "image", src: "/vip-empty-3.webp", alt: "VIP Zone Empty", isLocal: true },
+  { type: "image", src: "/karaoke-empty-1.webp", alt: "Karaoke Room Empty 1", isLocal: true },
+  { type: "image", src: "/karaoke-empty-2.webp", alt: "Karaoke Room Empty 2", isLocal: true },
+  { type: "image", src: "/karaoke-empty-3.webp", alt: "Karaoke Room Empty 3", isLocal: true },
 ];
 
 const FEATURES = [

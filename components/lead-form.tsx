@@ -234,7 +234,7 @@ export function LeadForm({
                                 htmlFor="agreeNonMarketing"
                                 className="text-xs leading-relaxed text-muted-foreground cursor-pointer select-none"
                             >
-                                I consent to receive non-marketing SMS messages from GD Lounge related to ticket purchases, event reminders, reservations, schedule updates, and important venue notifications. Message frequency may vary. Message & data rates may apply. Reply HELP for assistance. Reply STOP to opt out.
+                                By checking this box, I consent to receive non-marketing text messages from Gold Door 300 LLC about ticket purchases, event reminders, reservations, schedule updates, and important venue notifications. Message frequency varies, message & data rates may apply. Text HELP for assistance, reply STOP to opt out.
                             </label>
                         </div>
 
@@ -249,7 +249,7 @@ export function LeadForm({
                                 htmlFor="agreeMarketing"
                                 className="text-xs leading-relaxed text-muted-foreground cursor-pointer select-none"
                             >
-                                I consent to receive marketing SMS messages from GD Lounge, including event announcements and special offers. Message frequency may vary. Message & data rates may apply. Reply HELP for assistance. Reply STOP to opt out.
+                                By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new product updates among others from Gold Door 300 LLC at the phone number provided. Frequency may vary. Message & data rates may apply. Text HELP for assistance, reply STOP to opt out.
                             </label>
                         </div>
                     </div>
